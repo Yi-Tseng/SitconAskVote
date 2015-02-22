@@ -10,6 +10,8 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+from .db import db_config
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
@@ -59,9 +61,9 @@ WSGI_APPLICATION = 'SitconQuestionCorner.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'sitcon_que_corner',
-        'USER': 'root',
-        'PASSWORD': 'toor',
+        'NAME': 'sitcon_hacker_may_i_ask',
+        'USER': db_config["user"],
+        'PASSWORD': db_config["password"],
         'HOST': 'localhost',                      # Empty for localhost through domain sockets or           '127.0.0.1' for localhost through TCP.
         'PORT': '',                      # Set to empty string for default.
     }
