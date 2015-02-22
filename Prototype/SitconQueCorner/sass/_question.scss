@@ -8,6 +8,8 @@
     display: inline-block;
     width: 45%;
     margin: 0 10px;
+    vertical-align: top;
+    
     h1 {
         font-size: 1.4em;
         margin: 10px 0;
@@ -19,9 +21,9 @@
         border-width: 1px;
 
         .title {
-            background-color: #BA5347;
+            background-color: $bright_red;
             padding: 7px;
-            
+
             .btn-collapse {
                 float: right;
                 color: #FFF;
@@ -31,20 +33,17 @@
             }
         }
 
-        .author {
-            padding: 7px;
-        }
-        
         .context {
+            display: none;
             padding: 7px;
+            
+            p {
+                margin: 5px 0;
+            }
         }
 
         .close {
             display: none;
-        }
-        
-        .footer {
-            display: block;
         }
 
     }
@@ -59,12 +58,16 @@
 
 .btn-want-this-question {
     display: block;
-    background-color: #BA5347;
+    background-color: #000;
     color: #FFF;
     padding: 5px;
     border-radius: 5px;
     text-align: center;
-    margin: 10px 10px;
+    
+    border-style: solid;
+    border-width: 1px;
+    border-color: #CCC;
+    
     width: 60px;
 
     &:link {
@@ -72,7 +75,40 @@
     }
 
     &:hover {
+        color: #555;
+    }
+    
+    -webkit-transition: width .5s;
+    transition: width .5s;
+}
+
+.wanted {
+    background-color: $bright_red;
+    width: 120px;
+    
+    &:link {
+        text-decoration:none;
+    }
+
+    &:hover {
         color: #5E2923;
+    }
+    
+    -webkit-transition: width .5s;
+    transition: width .5s;
+}
+
+
+@media(max-width:1050px) {
+    .question-list {
+        width: 70%
     }
 }
 
+
+@media(max-width:810px) {
+    
+    .question-list {
+        width: 100%
+    }
+}

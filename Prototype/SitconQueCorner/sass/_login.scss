@@ -1,5 +1,7 @@
+@import "colors";
+
 .forget-pwd {
-    color: #BA5347;
+    color: $bright_red;
     font-size: .8em;
     &:link {
         text-decoration:none;

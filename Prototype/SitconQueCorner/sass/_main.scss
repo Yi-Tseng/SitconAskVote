@@ -1,13 +1,14 @@
+@import "colors";
+
 html {
-//    background-color: #151924;
+    //    background-color: #151924;
     background-color: #000;
 }
 
 body {
-    
-    color:#BA5347;
-	background: url("/images/bg-grid.png");
-    padding-top: 100px;
+
+    color:$bright_red;
+    background: url("/images/bg-grid.png");
 }
 
 .container {
@@ -16,7 +17,7 @@ body {
 
 .frame {
     margin: 30px auto;
-    width: 30%;
+    width: 50%;
     background-color: #5E2923;
     border-radius: 10px;
 }
@@ -29,13 +30,14 @@ body {
 
 .field {
     margin: 10px 0;
-    
+
     p {
         font-size: 0.8em;
         padding: 10px 0px;
     }
-    
+
     h2 {
+        color: #FFF;
         font-size: 1.4em;
         display: inline;
     }
@@ -44,13 +46,13 @@ body {
         background-color: transparent;
         border-style: solid;
         border-width: 0px 0px 1px 0px;
-        border-color: #BA5347;
+        border-color: $bright_red;
         color: #FFF;
         display: inline;
         width: 100%;
         font-size: 1.4em;
     }
-    
+
     textarea {
         width: 95%;
         height: 100px;
@@ -58,8 +60,29 @@ body {
         color: #FFF;
         border-style: solid;
         border-width: 1px;
-        border-color: #BA5347;
+        border-color: $bright_red;
         font-size: 1.4em;
         padding: 3px;
+    }
+}
+
+
+@media(max-width:810px) {
+    .frame {
+        width: 80%;
+    }
+    
+    .container {
+        padding: 0 20px;
+    }
+}
+
+@media(max-width:500px) {
+    .frame {
+        width: 100%;
+    }
+    
+    .container {
+        padding: 0 10px;
     }
 }

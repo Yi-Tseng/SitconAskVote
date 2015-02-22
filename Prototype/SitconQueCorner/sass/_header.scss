@@ -1,14 +1,28 @@
+@import "colors";
 $nav_font_size: 30px;
 
 .nav-bar {
     display: block;
     background-color: #000;
-    position: fixed;
-    top: 50px;
-    left: 0;
     width: 100%;
+    margin-top: 50px;
     div {
         display: inline-block;
+    }
+}
+
+.nav-bar-btn {
+    display: none;
+    //    display: block;
+    background-color:$bright_red;
+    width: 100%;
+    color: #FFF;
+    text-align: center;
+    font-size: 1.3em;
+    padding: 10px;
+
+    &:link {
+        text-decoration: none;
     }
 }
 
@@ -17,10 +31,10 @@ $nav_font_size: 30px;
     display: inline-block;
     margin: 10px;
     padding-left: 30px;
-    
+
     a {
         display: block;
-        color:#BA5347;
+        color:$bright_red;
         &:link {
             text-decoration: none;
         }
@@ -30,7 +44,7 @@ $nav_font_size: 30px;
 .nav-items {
     display: inline-block;
     font-size: $nav_font_size;
-    
+
     li {
         display: inline-block;
 
@@ -44,7 +58,7 @@ $nav_font_size: 30px;
             }
 
             &:hover {
-                color: #BA5347;
+                color: $bright_red;
             }
         }
     }
@@ -70,7 +84,35 @@ $nav_font_size: 30px;
     }
 
     &:hover {
-        color: #BA5347;
+        color: $bright_red;
+    }
+}
+.btn-logout {
+    font-size: $nav_font_size * 0.6;
+    color: #5E2923;
+    display: inline-block;
+    padding: 10px;
+    
+
+    &:link {
+        text-decoration:none;
+    }
+
+    &:hover {
+        color: $bright_red;
+    }
+}
+
+.user-prompt {
+    display: inline-block;
+    font-size: $nav_font_size * 0.6;
+    color: #5E2923;
+    
+    a {
+        color: $bright_red;
+        &:link {
+            text-decoration: none;
+        }
     }
 }
 
@@ -85,10 +127,55 @@ $nav_font_size: 30px;
     }
 
     &:hover {
-        color: #BA5347;
+        color: $bright_red;
     }
 }
 
 .divider {
     color: #5E2923;
+}
+
+@media(max-width:810px) {
+
+    .nav-bar {
+        margin-top: 0;
+        display: none;
+    }
+
+    .nav-items {
+        display: block;
+        .divider {
+            display: none;
+            content: "";
+        }
+
+        li {
+            display: block;
+        }
+
+    }
+
+
+    .nav-right {
+        float: none;
+        a {
+            display: block;
+        }
+    }
+
+    .nav-bar-btn {
+        display: block;
+    }
+    
+    .user-prompt {
+        margin-left: 10px;
+        a {
+            display: inline-block;
+        }
+        
+    }
+    
+    .nav-header {
+        padding-left: 0;
+    }
 }

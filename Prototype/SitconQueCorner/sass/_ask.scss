@@ -1,6 +1,8 @@
+@import "colors";
+
 .btn-ask {
     display: block;
-    background-color: #BA5347;
+    background-color: $bright_red;
     color: #FFF;
     padding: 10px;
     border-radius: 5px;
@@ -13,6 +15,8 @@
     }
 
     &:hover {
-        color: #5E2923;
+        color: $dark_red;
     }
 }
+
+
