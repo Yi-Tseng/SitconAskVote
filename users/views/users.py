@@ -2,8 +2,9 @@
 
 from django.contrib.auth.models import User, Group
 from django.shortcuts import render
+from django.views.decorators.debug import sensitive_post_parameters
 
-@sensitive_variables('password')
+@sensitive_post_parameters('password')
 def register(request):
 
     if request.user and request.user.is_authenticated():
@@ -14,4 +15,5 @@ def register(request):
 
     email = request.POST.get('email')
     nickname = request.POST.get('nick')
+
 
