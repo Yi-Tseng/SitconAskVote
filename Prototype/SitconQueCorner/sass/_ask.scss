@@ -1,0 +1,18 @@
+.btn-ask {
+    display: block;
+    background-color: #BA5347;
+    color: #FFF;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1em;
+    text-align: center;
+    width: 30%;
+
+    &:link {
+        text-decoration:none;
+    }
+
+    &:hover {
+        color: #5E2923;
+    }
+}

@@ -1,0 +1,94 @@
+$nav_font_size: 30px;
+
+.nav-bar {
+    display: block;
+    background-color: #000;
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    div {
+        display: inline-block;
+    }
+}
+
+.nav-header {
+    font-size: $nav_font_size;
+    display: inline-block;
+    margin: 10px;
+    padding-left: 30px;
+    
+    a {
+        display: block;
+        color:#BA5347;
+        &:link {
+            text-decoration: none;
+        }
+    }
+}
+
+.nav-items {
+    display: inline-block;
+    font-size: $nav_font_size;
+    
+    li {
+        display: inline-block;
+
+        a {
+            color: #5E2923;
+            display: block;
+            padding: 10px;
+
+            &:link {
+                text-decoration:none;
+            }
+
+            &:hover {
+                color: #BA5347;
+            }
+        }
+    }
+}
+
+.nav-left {
+    float: left;
+}
+
+.nav-right {
+    float: right;
+    padding-right: 30px;
+}
+
+.btn-login {
+    font-size: $nav_font_size;
+    color: #5E2923;
+    display: inline-block;
+    padding: 10px;
+
+    &:link {
+        text-decoration:none;
+    }
+
+    &:hover {
+        color: #BA5347;
+    }
+}
+
+.btn-register {
+    font-size: $nav_font_size;
+    display: inline-block;
+    padding: 10px;
+    color: #5E2923;
+
+    &:link {
+        text-decoration:none;
+    }
+
+    &:hover {
+        color: #BA5347;
+    }
+}
+
+.divider {
+    color: #5E2923;
+}

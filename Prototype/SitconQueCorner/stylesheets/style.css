@@ -1,0 +1,342 @@
+/* line 1, ../sass/_main.scss */
+html {
+  background-color: #000;
+}
+
+/* line 6, ../sass/_main.scss */
+body {
+  color: #BA5347;
+  background: url("/images/bg-grid.png");
+  padding-top: 100px;
+}
+
+/* line 13, ../sass/_main.scss */
+.container {
+  padding: 0 40px;
+}
+
+/* line 17, ../sass/_main.scss */
+.frame {
+  margin: 30px auto;
+  width: 30%;
+  background-color: #5E2923;
+  border-radius: 10px;
+}
+
+/* line 25, ../sass/_main.scss */
+.form {
+  padding: 50px 0;
+  margin: 0px 20px;
+}
+
+/* line 30, ../sass/_main.scss */
+.field {
+  margin: 10px 0;
+}
+/* line 33, ../sass/_main.scss */
+.field p {
+  font-size: 0.8em;
+  padding: 10px 0px;
+}
+/* line 38, ../sass/_main.scss */
+.field h2 {
+  font-size: 1.4em;
+  display: inline;
+}
+/* line 43, ../sass/_main.scss */
+.field input {
+  background-color: transparent;
+  border-style: solid;
+  border-width: 0px 0px 1px 0px;
+  border-color: #BA5347;
+  color: #FFF;
+  display: inline;
+  width: 100%;
+  font-size: 1.4em;
+}
+/* line 54, ../sass/_main.scss */
+.field textarea {
+  width: 95%;
+  height: 100px;
+  background-color: #5E2923;
+  color: #FFF;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #BA5347;
+  font-size: 1.4em;
+  padding: 3px;
+}
+
+/* line 3, ../sass/_header.scss */
+.nav-bar {
+  display: block;
+  background-color: #000;
+  position: fixed;
+  top: 50px;
+  left: 0;
+  width: 100%;
+}
+/* line 10, ../sass/_header.scss */
+.nav-bar div {
+  display: inline-block;
+}
+
+/* line 15, ../sass/_header.scss */
+.nav-header {
+  font-size: 30px;
+  display: inline-block;
+  margin: 10px;
+  padding-left: 30px;
+}
+/* line 21, ../sass/_header.scss */
+.nav-header a {
+  display: block;
+  color: #BA5347;
+}
+/* line 24, ../sass/_header.scss */
+.nav-header a:link {
+  text-decoration: none;
+}
+
+/* line 30, ../sass/_header.scss */
+.nav-items {
+  display: inline-block;
+  font-size: 30px;
+}
+/* line 34, ../sass/_header.scss */
+.nav-items li {
+  display: inline-block;
+}
+/* line 37, ../sass/_header.scss */
+.nav-items li a {
+  color: #5E2923;
+  display: block;
+  padding: 10px;
+}
+/* line 42, ../sass/_header.scss */
+.nav-items li a:link {
+  text-decoration: none;
+}
+/* line 46, ../sass/_header.scss */
+.nav-items li a:hover {
+  color: #BA5347;
+}
+
+/* line 53, ../sass/_header.scss */
+.nav-left {
+  float: left;
+}
+
+/* line 57, ../sass/_header.scss */
+.nav-right {
+  float: right;
+  padding-right: 30px;
+}
+
+/* line 62, ../sass/_header.scss */
+.btn-login {
+  font-size: 30px;
+  color: #5E2923;
+  display: inline-block;
+  padding: 10px;
+}
+/* line 68, ../sass/_header.scss */
+.btn-login:link {
+  text-decoration: none;
+}
+/* line 72, ../sass/_header.scss */
+.btn-login:hover {
+  color: #BA5347;
+}
+
+/* line 77, ../sass/_header.scss */
+.btn-register {
+  font-size: 30px;
+  display: inline-block;
+  padding: 10px;
+  color: #5E2923;
+}
+/* line 83, ../sass/_header.scss */
+.btn-register:link {
+  text-decoration: none;
+}
+/* line 87, ../sass/_header.scss */
+.btn-register:hover {
+  color: #BA5347;
+}
+
+/* line 92, ../sass/_header.scss */
+.divider {
+  color: #5E2923;
+}
+
+/* line 1, ../sass/_footer.scss */
+footer {
+  width: 100%;
+  padding-left: 30px;
+}
+
+/* line 1, ../sass/_index.scss */
+.logo {
+  padding: 80px 0;
+  margin: 0 auto;
+  width: 50%;
+}
+/* line 5, ../sass/_index.scss */
+.logo img {
+  width: 100%;
+}
+
+/* line 1, ../sass/_register.scss */
+.btn-send-register {
+  display: block;
+  background-color: #BA5347;
+  color: #FFF;
+  padding: 20px;
+  border-radius: 5px;
+  font-size: 1.3em;
+  text-align: center;
+}
+/* line 10, ../sass/_register.scss */
+.btn-send-register:link {
+  text-decoration: none;
+}
+/* line 14, ../sass/_register.scss */
+.btn-send-register:hover {
+  color: #5E2923;
+}
+
+/* line 1, ../sass/_login.scss */
+.forget-pwd {
+  color: #BA5347;
+  font-size: .8em;
+}
+/* line 4, ../sass/_login.scss */
+.forget-pwd:link {
+  text-decoration: none;
+}
+/* line 8, ../sass/_login.scss */
+.forget-pwd:hover {
+  color: #FFF;
+}
+
+/* line 1, ../sass/_question.scss */
+.question-list {
+  border-style: solid;
+  border-color: #ccc;
+  border-width: 1px;
+  padding: 10px;
+  color: #FFF;
+  display: inline-block;
+  width: 45%;
+  margin: 0 10px;
+}
+/* line 11, ../sass/_question.scss */
+.question-list h1 {
+  font-size: 1.4em;
+  margin: 10px 0;
+}
+/* line 16, ../sass/_question.scss */
+.question-list .item {
+  border-style: solid;
+  border-color: #ccc;
+  border-width: 1px;
+}
+/* line 21, ../sass/_question.scss */
+.question-list .item .title {
+  background-color: #BA5347;
+  padding: 7px;
+}
+/* line 25, ../sass/_question.scss */
+.question-list .item .title .btn-collapse {
+  float: right;
+  color: #FFF;
+}
+/* line 28, ../sass/_question.scss */
+.question-list .item .title .btn-collapse:link {
+  text-decoration: none;
+}
+/* line 34, ../sass/_question.scss */
+.question-list .item .author {
+  padding: 7px;
+}
+/* line 38, ../sass/_question.scss */
+.question-list .item .context {
+  padding: 7px;
+}
+/* line 42, ../sass/_question.scss */
+.question-list .item .close {
+  display: none;
+}
+/* line 46, ../sass/_question.scss */
+.question-list .item .footer {
+  display: block;
+}
+
+/* line 54, ../sass/_question.scss */
+.question-set {
+  margin: 0 auto;
+  width: 90%;
+}
+
+/* line 60, ../sass/_question.scss */
+.btn-want-this-question {
+  display: block;
+  background-color: #BA5347;
+  color: #FFF;
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+  margin: 10px 10px;
+  width: 60px;
+}
+/* line 70, ../sass/_question.scss */
+.btn-want-this-question:link {
+  text-decoration: none;
+}
+/* line 74, ../sass/_question.scss */
+.btn-want-this-question:hover {
+  color: #5E2923;
+}
+
+/* line 1, ../sass/_ask.scss */
+.btn-ask {
+  display: block;
+  background-color: #BA5347;
+  color: #FFF;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1em;
+  text-align: center;
+  width: 30%;
+}
+/* line 11, ../sass/_ask.scss */
+.btn-ask:link {
+  text-decoration: none;
+}
+/* line 15, ../sass/_ask.scss */
+.btn-ask:hover {
+  color: #5E2923;
+}
+
+/* line 1, ../sass/_about.scss */
+.about {
+  margin: 50px 0;
+}
+/* line 4, ../sass/_about.scss */
+.about h1 {
+  font-size: 2em;
+}
+/* line 8, ../sass/_about.scss */
+.about a {
+  color: #FFF;
+}
+/* line 10, ../sass/_about.scss */
+.about a:link {
+  text-decoration: none;
+}
+/* line 15, ../sass/_about.scss */
+.about p {
+  font-size: 1.2em;
+  margin: 10px 0;
+}

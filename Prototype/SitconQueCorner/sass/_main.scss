@@ -1,0 +1,65 @@
+html {
+//    background-color: #151924;
+    background-color: #000;
+}
+
+body {
+    
+    color:#BA5347;
+	background: url("/images/bg-grid.png");
+    padding-top: 100px;
+}
+
+.container {
+    padding: 0 40px;
+}
+
+.frame {
+    margin: 30px auto;
+    width: 30%;
+    background-color: #5E2923;
+    border-radius: 10px;
+}
+
+
+.form {
+    padding: 50px 0;
+    margin: 0px 20px;
+}
+
+.field {
+    margin: 10px 0;
+    
+    p {
+        font-size: 0.8em;
+        padding: 10px 0px;
+    }
+    
+    h2 {
+        font-size: 1.4em;
+        display: inline;
+    }
+
+    input {
+        background-color: transparent;
+        border-style: solid;
+        border-width: 0px 0px 1px 0px;
+        border-color: #BA5347;
+        color: #FFF;
+        display: inline;
+        width: 100%;
+        font-size: 1.4em;
+    }
+    
+    textarea {
+        width: 95%;
+        height: 100px;
+        background-color: #5E2923;
+        color: #FFF;
+        border-style: solid;
+        border-width: 1px;
+        border-color: #BA5347;
+        font-size: 1.4em;
+        padding: 3px;
+    }
+}

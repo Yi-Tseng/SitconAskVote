@@ -1,0 +1,11 @@
+.forget-pwd {
+    color: #BA5347;
+    font-size: .8em;
+    &:link {
+        text-decoration:none;
+    }
+
+    &:hover {
+        color: #FFF;
+    }
+}
