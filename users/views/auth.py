@@ -7,7 +7,7 @@ def login(request):
 
     context = {}
 
-    if request.user.is_authenticated():
+    if request.user and request.user.is_authenticated():
         return redirect('/')
 
     # get
