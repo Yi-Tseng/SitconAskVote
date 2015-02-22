@@ -7,3 +7,13 @@ def index(request):
         context['username'] = request.user.first_name
 
     return render(request, 'index.html', context)
+
+
+def about(request):
+    context = {}
+
+    if request.user.is_authenticated():
+        context['username'] = request.user.first_name
+
+    return render(request, 'about.html', context)
+

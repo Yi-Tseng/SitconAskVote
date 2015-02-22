@@ -7,8 +7,8 @@
         <meta name="description" content="SITCON, Hacker, 給問嗎？">
         <meta name="author" content="Takeshi">
 
-        <link rel="stylesheet" href="/stylesheets/reset.css" />
-        <link rel="stylesheet" href="/stylesheets/style.css" />
+        <link rel="stylesheet" href="{% static 'stylesheets/reset.css' %}" />
+        <link rel="stylesheet" href="{% static 'stylesheets/style.css' %}" />
     </head>
 
     <body>
@@ -34,14 +34,13 @@
     </ul>
 
     <div class="nav-right">
-<!--
+        {% if username %}
+        <h3 class="user-prompt">歡迎! <a href="/user/profile">{{username}}</a></h3>
+        <a href="/user/logout" class="btn-logout">登出</a>
+        {% else %}
         <a href="/user/login" class="btn-login">登入</a>
         <a href="/user/register" class="btn-register">註冊</a>
--->
-        
-        <!-- 已登入 -->
-        <h3 class="user-prompt">歡迎! <a href="/user/profile">王小明</a></h3>
-        <a href="/user/logout" class="btn-logout">登出</a>
+        {% endif %}
     </div>
 </div>
 
@@ -64,10 +63,7 @@
 
 </div>
 
-<!--        <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
--->
-        
-        <script src="/javascripts/jquery-1.11.2.min.js"></script>
-        <script src="/javascripts/scripts.js"></script>
+        <script src="{% static 'javascripts/jquery-1.11.2.min.js' %}"></script>
+        <script src="{% static 'javascripts/scripts.js' %}"></script>
     </body>
 </html>
