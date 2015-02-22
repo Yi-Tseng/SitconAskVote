@@ -1,0 +1,47 @@
+{% extends 'core/base.html' %}
+{% block header %}
+<a class="nav-bar-btn" href="#">
+    Menu
+</a>
+
+<div class="nav-bar">
+    <div class="nav-header">
+        <a href="/"> Hacker, 給問嗎？</a>
+    </div>
+
+    <ul class="nav-items">
+        <li><a href="/question/ask">發問</a></li>
+        <li class="divider" >/</li>
+        <li><a href="/question/view">看問題</a></li>
+        <li class="divider" >/</li>
+        <li><a href="/about">關於</a></li>
+    </ul>
+
+    <div class="nav-right">
+        <!-- 已登入 -->
+        {% if username %}
+        <h3 class="user-prompt">歡迎! <a href="/user/profile">{{username}}</a></h3>
+        <a href="/user/logout" class="btn-logout">登出</a>
+        {% else %}
+        <a href="/user/login" class="btn-login">登入</a>
+        <a href="/user/register" class="btn-register">註冊</a>
+        {% endif %}
+    </div>
+</div>
+
+
+{% endblock %}
+
+
+{% block footer %}
+
+<div class="footer" >
+    <hr>
+
+    <footer>
+        <p>SITCON, Hacker 給問嗎？</p>
+    </footer>
+
+</div>
+
+{% endblock %}
