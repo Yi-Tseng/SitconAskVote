@@ -3,7 +3,7 @@ import question
 import users
 
 urlpatterns = patterns('',
-	url(r'^/$', 'core.views.index', name='index'),
-    url(r'^question/', include(question.urls)),
-    url(r'^user/', include(users.urls)),
+    url(r'^$', 'core.views.index'),
+    #url(r'^question/', include(question.urls)),
+    #url(r'^user/', include(users.urls)),
 )
