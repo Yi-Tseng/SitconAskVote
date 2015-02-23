@@ -18,7 +18,11 @@
         <div class="field">
             <a href="#" class="btn-send-register">送出</a>
         </div>
-        {{ error if error is not None }}
+        {% if error != None %}
+        <div class="field">
+            <h2>{{ error }}</h2>
+        </div>
+        {% endif %}
     </form>
 </div>
 {% endblock %}
