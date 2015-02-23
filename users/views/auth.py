@@ -10,8 +10,7 @@ def login(request):
     if request.user and request.user.is_authenticated():
         return redirect('/')
 
-    # get
-    if not request.POST:
+    if request.method == 'GET':
         return render(request, 'login.html', context)
 
     if 'submit' in request.POST:
