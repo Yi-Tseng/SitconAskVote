@@ -38,6 +38,9 @@ $(".btn-collapse").click(function(e) {
         $("#" + target).show();
         e.target.innerHTML = "▼";
     }
+});
 
 
+$(".btn-send-register").click(function(e) {
+    $("#reg_form").submit();
 });

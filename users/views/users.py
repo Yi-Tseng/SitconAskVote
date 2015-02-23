@@ -46,6 +46,7 @@ def register(request):
         return render(request, 'register.html', context)
 
     else:
+        # TODO: send check email
         context['message'] = '註冊確認信已寄至您的信箱'
         return render(request, 'msg.html', context)
 
