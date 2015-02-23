@@ -27,6 +27,7 @@ def register(request):
         context['error'] = 'email missing'
         
     if User.objects.filter(email=email).count() < 1:
+        user.username = email
         user.email = email
         user.last_name = nickname
         user.set_password(password)
