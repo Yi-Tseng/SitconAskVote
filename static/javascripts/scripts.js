@@ -45,6 +45,6 @@ $(".btn-send-register").click(function(e) {
     $("#reg_form").submit();
 });
 
-$(".btn-login").click(function(e) {
+$(".btn-form-login").click(function(e) {
     $("#login_form").submit();
 });

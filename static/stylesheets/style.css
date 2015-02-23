@@ -336,7 +336,7 @@ footer {
 }
 
 /* line 15, ../sass/_login.scss */
-.btn-login {
+.btn-form-login {
   display: block;
   background-color: #ba5347;
   color: #FFF;
@@ -346,11 +346,11 @@ footer {
   text-align: center;
 }
 /* line 24, ../sass/_login.scss */
-.btn-login:link {
+.btn-form-login:link {
   text-decoration: none;
 }
 /* line 28, ../sass/_login.scss */
-.btn-login:hover {
+.btn-form-login:hover {
   color: #5E2923;
 }
 
