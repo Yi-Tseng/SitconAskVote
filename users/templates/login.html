@@ -1,19 +1,20 @@
 {% extends 'core/master.html' %}
 {% block content_block%}
 <div class="frame">
-    <div class="form">
+    <form id="login_form" class="form">
+        {% csrf_token %}
         <div class="field">
             <h2>電子郵件：</h2>
             <input name="email"/>
         </div>
         <div class="field">
             <h2>密碼：</h2><a class="forget-pwd" href="/user/forget">忘記密碼</a>
-            <input name="pwd" type="password" />
+            <input name="password" type="password" />
             
         </div>
         <div class="field">
-            <a href="#" class="btn-send-register">登入</a>
+            <a href="#" class="btn-login">登入</a>
         </div>
-    </div>
+    </form>
 </div>
 {% endblock %}
