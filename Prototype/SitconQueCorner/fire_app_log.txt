@@ -18,3 +18,8 @@
 2015-02-22 23:16:17      Copy /stylesheets/main.css
 2015-02-22 23:16:17      Copy /stylesheets/reset.css
 2015-02-22 23:16:17      Copy /stylesheets/style.css
+2015-02-23 14:57:04     error sass/style.scss (Line 5 of sass/_msg.scss: Invalid CSS after "        1.4em": expected "{", was ";")
+2015-02-23 14:57:04 overwrite stylesheets/style.css 
+2015-02-23 14:57:27     error sass/style.scss (Line 6 of sass/_msg.scss: Invalid CSS after "        1.4em": expected "{", was ";")
+2015-02-23 14:57:27 overwrite stylesheets/style.css 
+2015-02-23 14:57:53 overwrite stylesheets/style.css 

@@ -554,3 +554,13 @@ footer {
   filter: alpha(opacity=30);
   opacity: 0.3;
 }
+
+/* line 1, ../sass/_msg.scss */
+.msg {
+  margin: 0 auto;
+  padding: 20px;
+}
+/* line 5, ../sass/_msg.scss */
+.msg h1 {
+  font-size: 1.4em;
+}
