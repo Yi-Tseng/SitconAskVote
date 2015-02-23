@@ -2,6 +2,7 @@
 {% block content_block%}
 <div class="frame">
     <form id="reg_form" class="form" action="/user/register" method="POST">
+        {% csrf_token %}
         <div class="field">
             <h2>電子郵件：</h2>
             <input id="email"/>
