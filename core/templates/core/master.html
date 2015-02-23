@@ -19,8 +19,8 @@
 
     <div class="nav-right">
         <!-- 已登入 -->
-        {% if username %}
-        <h3 class="user-prompt">歡迎! <a href="/user/profile">{{username}}</a></h3>
+        {% if user.is_authenticated %}
+        <h3 class="user-prompt">歡迎! <a href="/user/profile">{{user.last_name}}</a></h3>
         <a href="/user/logout" class="btn-logout">登出</a>
         {% else %}
         <a href="/user/login" class="btn-login">登入</a>
