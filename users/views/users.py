@@ -14,7 +14,7 @@ def register(request):
     if request.user and request.user.is_authenticated():
         return redirect('/')
 
-    if not request.POST:
+    if request.method == 'GET':
         return render(request, 'register.html')
 
     email = request.POST.get('email')
