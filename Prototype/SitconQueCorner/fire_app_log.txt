@@ -25,3 +25,12 @@
 2015-02-23 14:57:53 overwrite stylesheets/style.css 
 2015-02-23 15:03:48 overwrite stylesheets/style.css 
 2015-02-23 15:03:57 overwrite stylesheets/style.css 
+2015-02-23 15:15:08     error sass/style.scss (Line 3 of sass/_register.scss: Invalid CSS after "@import "color"": expected selector or at-rule, was ".btn-send-regis...")
+2015-02-23 15:15:08 overwrite stylesheets/style.css 
+2015-02-23 15:15:26     error sass/style.scss (Line 3 of sass/_register.scss: Invalid CSS after "@import "color"": expected selector or at-rule, was ".btn-send-regis...")
+2015-02-23 15:15:26 identical stylesheets/style.css 
+2015-02-23 15:15:29     error sass/style.scss (Line 3 of sass/_register.scss: Invalid CSS after "@import "colors"": expected selector or at-rule, was ".btn-send-regis...")
+2015-02-23 15:15:29 overwrite stylesheets/style.css 
+2015-02-23 15:15:34     error sass/style.scss (Line 2 of sass/_question.scss: Invalid CSS after "@import "colors"": expected selector or at-rule, was ".question-list {")
+2015-02-23 15:15:34 overwrite stylesheets/style.css 
+2015-02-23 15:15:37 overwrite stylesheets/style.css 
