@@ -335,6 +335,25 @@ footer {
   color: #FFF;
 }
 
+/* line 15, ../sass/_login.scss */
+.btn-login {
+  display: block;
+  background-color: #ba5347;
+  color: #FFF;
+  padding: 20px;
+  border-radius: 5px;
+  font-size: 1.3em;
+  text-align: center;
+}
+/* line 24, ../sass/_login.scss */
+.btn-login:link {
+  text-decoration: none;
+}
+/* line 28, ../sass/_login.scss */
+.btn-login:hover {
+  color: #5E2923;
+}
+
 /* line 1, ../sass/_question.scss */
 .question-list {
   border-style: solid;
@@ -562,5 +581,6 @@ footer {
 }
 /* line 5, ../sass/_msg.scss */
 .msg h1 {
+  color: #FFF;
   font-size: 1.4em;
 }
