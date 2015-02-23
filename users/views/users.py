@@ -26,21 +26,15 @@ def register(request):
     if not email:
         context['error'] = 'email missing'
         
+    if User.objects.filter(email=email).count() < 1:
+        user.email = email
+        user.last_name = nickname
+        user.set_password(password)
+        user.save()
 
-    try:
-        validate_email(email)
+    else:
+        context['error'] = 'exist'
 
-        if User.objects.filter(email=email).count() < 1:
-            user.email = email
-            user.last_name = nickname
-            user.set_password(password)
-            user.save()
-
-        else:
-            context['error'] = 'exist'
-
-    except ValidationError:
-        context['error'] = 'invalid'
 
     if context['error']:
         return render(request, 'register.html', context)
