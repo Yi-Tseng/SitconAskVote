@@ -37,7 +37,7 @@ def register(request):
         context['error'] = 'exist'
 
 
-    if context['error']:
+    if 'error' in context:
         return render(request, 'register.html', context)
 
     else:
