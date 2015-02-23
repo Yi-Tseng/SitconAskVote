@@ -13,24 +13,23 @@ def login(request):
     if request.method == 'GET':
         return render(request, 'login.html', context)
 
-    if 'submit' in request.POST:
-        username = request.POST['email']
-        password = request.POST['password']
-        user = auth.authenticate(username=username, password=password)
+    
+    username = request.POST['email']
+    password = request.POST['password']
+    user = auth.authenticate(username=username, password=password)
 
-        if user is not None:
+    if user is not None:
 
-            if user.is_active:
-                auth.login(request, user)
+        if user.is_active:
+            auth.login(request, user)
 
-                return redirect('/')
+            return redirect('/')
 
-            context['error'] = 'account_disabled'
+        context['error'] = 'account_disabled'
 
-        else:
-            context['error'] = 'invalid_login'
     else:
-        context['error'] = request.GET.get('status')
+        context['error'] = 'invalid_login'
+    
 
     return render(request, 'login.html', context)
 
