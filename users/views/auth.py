@@ -28,7 +28,7 @@ def login(request):
         context['error'] = '帳號未啟用'
 
     else:
-        context['error'] = '找不到帳號'
+        context['error'] = '帳號或密碼錯誤'
     
 
     return render(request, 'login.html', context)

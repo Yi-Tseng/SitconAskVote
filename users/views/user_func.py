@@ -94,7 +94,8 @@ def forget(request):
             token.save()
 
             # TODO: send password reset email!
-
+            return render(request, 'msg.html', {'message': '請前往信箱檢查密碼信件'})
+            
         except User.DoesNotExist:
             return render(request, 'forget.html', {'error': '信箱未註冊'})
 
