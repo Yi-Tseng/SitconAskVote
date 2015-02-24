@@ -1,14 +1,13 @@
 @import "colors";
 
 html {
-    //    background-color: #151924;
-    background-color: #000;
+    background: none repeat scroll 0% 0% #151924;
+    background-image: url("/images/bg-grid.png");
 }
 
 body {
-
     color:$bright_red;
-    background: url("/images/bg-grid.png");
+//    background: url("/images/bg-grid.png");
 }
 
 .container {
@@ -20,12 +19,13 @@ body {
     width: 50%;
     background-color: #5E2923;
     border-radius: 10px;
+    min-height: 500px;
 }
 
 
 .form {
     padding: 50px 0;
-    margin: 0px 20px;
+    margin: auto 20px;
 }
 
 .field {
@@ -55,7 +55,7 @@ body {
 
     textarea {
         width: 95%;
-        height: 100px;
+        min-height: 400px;
         background-color: #5E2923;
         color: #FFF;
         border-style: solid;
