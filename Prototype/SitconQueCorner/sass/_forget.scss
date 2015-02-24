@@ -1,0 +1,18 @@
+@import "colors";
+.btn-send-forget {
+    display: block;
+    background-color: $bright_red;
+    color: #FFF;
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 1.3em;
+    text-align: center;
+
+    &:link {
+        text-decoration:none;
+    }
+
+    &:hover {
+        color: #5E2923;
+    }
+}

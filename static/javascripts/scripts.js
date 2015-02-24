@@ -66,3 +66,6 @@ $(".btn-change-profile").click(function(e) {
     $("#profile-form").submit();
 });
 
+$(".btn-send-forget").click(function(e) {
+    $("#form-forget").submit();
+});
