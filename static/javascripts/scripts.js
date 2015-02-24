@@ -10,18 +10,19 @@ $(".nav-bar-btn").click(function(e) {
 
 
 $(".btn-want-this-question").click(function(e) {
-    console.log(e.target.id);
+    
     var sel = "#" + e.target.id;
 
     if($(sel).hasClass("wanted")) {
         $(sel).removeClass("wanted");
         $(sel).html("想聽");
-        // TODO: change database
     } else {
         $(sel).addClass("wanted");
         $(sel).html("已列入想聽名單");
-        // TODO: change database
     }
+    
+    var qid = e.target.id.split('-')[2];
+    $.get('/question/want?qid=' + qid);
 });
 
 
