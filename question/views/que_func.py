@@ -60,6 +60,15 @@ def view_question(request):
 def want_listen(request):
     response_data = {}
 
+    if 'qid' not in request.GET:
+        question_list = Question.objects.all()
+
+        for ql in question_list:
+            response_data[ql.id] = ql.want
+
+        return HttpResponse(json.dumps(response_data), content_type="application/json")
+            
+
     if request.user and request.user.is_authenticated():
         que = None
         try:
@@ -78,3 +87,5 @@ def want_listen(request):
             pass
 
     return HttpResponse(json.dumps(response_data), content_type="application/json")
+
+
