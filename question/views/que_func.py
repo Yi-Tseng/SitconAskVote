@@ -63,7 +63,7 @@ def want_listen(request):
     if request.user and request.user.is_authenticated():
         que = None
         try:
-            que = Question.objects.get(id=request.GET.qid)
+            que = Question.objects.get(id=request.GET['qid'])
             want = WantListen.objects.get(user=request.user, question=que)
             want.delete()
 
