@@ -15,7 +15,7 @@
 
             <div class="context" id="ctx-pop-{{pop.id}}">
 
-                <p>提問者：{{pop.author}}</p>
+                <p>提問者：{{pop.author.last_name}}</p>
                 {% autoescape on %}
                 {{pop.text}}
                 {% endautoescape %}

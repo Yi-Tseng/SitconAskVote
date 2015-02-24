@@ -14,7 +14,7 @@ def ask(request):
     # create question
     title = request.POST['title']
     context = request.POST['context']
-    author = request.user.id
+    author = request.user
 
     new_que = Question()
 
