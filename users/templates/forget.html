@@ -2,6 +2,7 @@
 {% block content_block%}
 <div class="frame">
     <form id="form-forget" class="form" action="/user/forget" method="POST">
+        {% csrf_token %}
         <div class="field">
             <h2>電子郵件：</h2>
             <input name="email"/>
@@ -14,7 +15,7 @@
             <a href="#" class="btn-send-forget">重設密碼</a>
             <p>註：收到信件後，按下確認更改連結後才會更改密碼。</p>
         </div>
-        {% if error is not None %}
+        {% if error != None %}
         <p class='error-msg'>{{error}}</p>
         {% endif %}
     </form>
