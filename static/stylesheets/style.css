@@ -584,3 +584,22 @@ footer {
   color: #FFF;
   font-size: 1.4em;
 }
+
+/* line 3, ../sass/_profile.scss */
+.btn-change-profile {
+  display: block;
+  background-color: #ba5347;
+  color: #FFF;
+  padding: 20px;
+  border-radius: 5px;
+  font-size: 1.3em;
+  text-align: center;
+}
+/* line 12, ../sass/_profile.scss */
+.btn-change-profile:link {
+  text-decoration: none;
+}
+/* line 16, ../sass/_profile.scss */
+.btn-change-profile:hover {
+  color: #5E2923;
+}
