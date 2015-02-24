@@ -36,3 +36,25 @@
 2015-02-23 15:15:37 overwrite stylesheets/style.css 
 2015-02-23 15:20:38 overwrite stylesheets/style.css 
 2015-02-24 17:27:48 overwrite stylesheets/style.css 
+2015-02-24 18:44:16 overwrite stylesheets/style.css 
+2015-02-24 18:45:25 overwrite stylesheets/style.css 
+2015-02-24 18:46:06 overwrite stylesheets/style.css 
+2015-02-24 18:48:42 overwrite stylesheets/style.css 
+2015-02-24 18:49:12 overwrite stylesheets/style.css 
+2015-02-24 18:49:43 overwrite stylesheets/style.css 
+2015-02-24 18:49:58 overwrite stylesheets/style.css 
+2015-02-24 18:50:10 overwrite stylesheets/style.css 
+2015-02-24 18:50:40 overwrite stylesheets/style.css 
+2015-02-24 18:51:37     error sass/style.scss (Line 9 of sass/_header.scss: Invalid CSS after "    width": expected ";", was ": 100%;")
+2015-02-24 18:51:37 overwrite stylesheets/style.css 
+2015-02-24 18:51:51     error sass/style.scss (Line 8 of sass/_header.scss: wrong number of arguments (4 for 3) for `rgb')
+2015-02-24 18:51:51 overwrite stylesheets/style.css 
+2015-02-24 18:51:53 overwrite stylesheets/style.css 
+2015-02-24 19:04:26 overwrite stylesheets/style.css 
+2015-02-24 19:04:33 overwrite stylesheets/style.css 
+2015-02-24 19:04:39 overwrite stylesheets/style.css 
+2015-02-24 19:04:53 overwrite stylesheets/style.css 
+2015-02-24 19:05:21 overwrite stylesheets/style.css 
+2015-02-24 19:06:00 overwrite stylesheets/style.css 
+2015-02-24 19:07:16 identical stylesheets/style.css 
+2015-02-24 19:07:17 identical stylesheets/style.css 
