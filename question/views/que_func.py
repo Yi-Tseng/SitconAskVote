@@ -67,7 +67,13 @@ def want_listen(request):
             response_data[ql.id] = ql.want
 
         return HttpResponse(json.dumps(response_data), content_type="application/json")
-            
+
+    if 'user_want' in request.GET:
+        if request.user.is_authenticated():
+            want_list = WantListen.objects.filter(user=request.user)
+            response_data = [w.question.id for w in want_list]
+
+        return HttpResponse(json.dumps(response_data), content_type="application/json")
 
     if request.user and request.user.is_authenticated():
         que = None

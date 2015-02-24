@@ -67,4 +67,7 @@
     </div>
 </div>
 <script src="{% static 'javascripts/que_view.js' %}"></script>
+{% if user.is_authenticated %}
+    <script src="{% static 'javascripts/user_want.js' %}"></script>
+{% endif %}
 {% endblock %}

@@ -13,16 +13,24 @@ $(".btn-want-this-question").click(function(e) {
     
     var sel = "#" + e.target.id;
 
-    if($(sel).hasClass("wanted")) {
-        $(sel).removeClass("wanted");
-        $(sel).html("想聽");
-    } else {
-        $(sel).addClass("wanted");
-        $(sel).html("已列入想聽名單");
-    }
-
     var qid = e.target.id.split('-')[2];
     $.get('/question/want?qid=' + qid);
+
+    if($(sel).hasClass("wanted")) {
+        $('#btn-pop-' + qid).removeClass("wanted");
+        $('#btn-pop-' + qid).html("想聽");
+
+        $('#btn-new_q-' + qid).removeClass("wanted");
+        $('#btn-new_q-' + qid).html("想聽");
+    } else {
+        $('#btn-pop-' + qid).addClass("wanted");
+        $('#btn-pop-' + qid).html("已列入想聽名單");
+
+        $('#btn-new_q-' + qid).addClass("wanted");
+        $('#btn-new_q-' + qid).html("已列入想聽名單");
+    }
+
+    
 });
 
 
