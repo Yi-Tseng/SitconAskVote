@@ -9,19 +9,17 @@ def ask(request):
         return redirect('/user/login')
 
     if request.method == 'GET':
-        return render('ask.html')
+        return render(request, 'ask.html')
 
     # create question
-    title = request.POST.title
-    context = request.POST.context
+    title = request.POST['title']
+    context = request.POST['context']
     author = request.user.id
 
     print title, context, author
-
-    
-
+    return render(request, 'ask.html')
 
 
 def view_question(request):
     questions = Question.objects.get()
-    return render('view.html', {'questions':questions})
+    return render(request, 'view.html', {'questions':questions})
