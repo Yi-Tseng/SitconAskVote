@@ -55,7 +55,7 @@ def profile(request):
     user = request.user
     nickname = request.POST['nickname']
     password = request.POST['password']
-    user.nickname = nickname
+    user.last_name = nickname
 
     if password != '':
         user.set_password(password)
