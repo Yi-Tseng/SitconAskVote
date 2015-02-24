@@ -1,0 +1,19 @@
+@import "colors";
+
+.admin-btn {
+    color: #FFF;
+    border-bottom-style: solid;
+    border-color: #FFF;
+    border-width: 1px;
+    background-color: $bright-red;
+    padding: 2px;
+    
+    
+    &:link {
+        text-decoration: none;
+    }
+    
+    &:hover {
+        background-color: $dark_red;
+    }
+}

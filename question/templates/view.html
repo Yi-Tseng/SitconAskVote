@@ -11,6 +11,18 @@
 
             <div class="title">
                 {{pop.title}} <b>({{pop.want}}人想聽)</b>
+
+                <!-- 管理用 -->
+                {{% if pop.author.id == user.id %}}
+                <a class="admin-btn" href="/question/edit/{{pop.id}}">編輯</a>
+                <a class="admin-btn" href="/question/del/{{pop.id}}">刪除</a>
+                {{% endif %}}
+                {{% if user.is_staff %}}
+                <a class="admin-btn" href="/question/del/{{pop.id}}">刪除</a>
+                <a class="admin-btn" href="/question/solve/{{pop.id}}">已解決</a>
+                {{% endif %}}
+                <!-- 管理用 -->
+
                 <a class="btn-collapse" href="#ctx-pop-{{pop.id}}">►</a>
             </div>
 
@@ -42,6 +54,18 @@
 
             <div class="title">
                 {{new_q.title}} <b>({{new_q.want}}人想聽)</b>
+
+                <!-- 管理用 -->
+                {{% if pop.author.id == user.id %}}
+                <a class="admin-btn" href="/question/edit/{{new_q.id}}">編輯</a>
+                <a class="admin-btn" href="/question/del/{{new_q.id}}">刪除</a>
+                {{% endif %}}
+                {{% if user.is_staff %}}
+                <a class="admin-btn" href="/question/del/{{new_q.id}}">刪除</a>
+                <a class="admin-btn" href="/question/solve/{{new_q.id}}">已解決</a>
+                {{% endif %}}
+                <!-- 管理用 -->
+
                 <a class="btn-collapse" href="#ctx-new_q-{{new_q.id}}">►</a>
             </div>
 
