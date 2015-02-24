@@ -1,0 +1,20 @@
+{% extends 'core/master.html' %}
+{% block content_block%}
+<div class="frame">
+    <form id="ask-form" class="form" action="/question/edit" method="POST">
+        {% csrf_token %}
+        <input name="qid" type="hidden" value="{{question.id}}">
+        <div class="field">
+            <h2>提問標題(64字以內)：</h2>
+            <input name="title" value="{{question.title}}" />
+        </div>
+        <div class="field">
+            <h2>提問內容(256字以內)：</h2>
+            <textarea name="context" value="{{question.text}}"></textarea>
+        </div>
+        <div class="field" align="center">
+            <a href="#" class="btn-ask">提出問題</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

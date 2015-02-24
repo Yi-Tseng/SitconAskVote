@@ -98,9 +98,34 @@ def want_listen(request):
 
 @login_required
 def edit(request):
-    
+    qid = request.GET['qid']
     if request.method == 'GET':
-        render(request, 'edit.html')
+
+        try:
+            question = Question.objects.get(id=qid)
+
+            return render(request, 'edit.html', question)
+
+        except:
+            return render(request, 'msg.html', {'message':'Oops, 好像有東西出錯了，請再試一次'})
+
+    title = request.POST['title']
+    context = request.POST['context']
+
+    if len(title) == 0 or len(context) == 0:
+        return render(request, 'msg.html', {'message':'標題或內容長度不得為零，請再試一次'})
+
+    try:
+        question = Question.objects.get(id=qid)
+        question.title = title
+        question.text = context
+        question.save()
+
+        return redirect('/question/view')
+
+    except:
+        return render(request, 'msg.html', {'message':'Oops, 好像有東西出錯了，請再試一次'})
+
 
 @login_required
 def delete(request):
