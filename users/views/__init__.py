@@ -1,2 +1,2 @@
 from auth import login, logout
-from users import register, profile
+from user_func import register, profile, forget

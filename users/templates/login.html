@@ -10,12 +10,11 @@
         <div class="field">
             <h2>密碼：</h2><a class="forget-pwd" href="/user/forget">忘記密碼</a>
             <input name="password" type="password" />
-            
         </div>
         <div class="field">
             <a href="#" class="btn-form-login">登入</a>
         </div>
-        {% if error is not None %}
+        {% if error != None %}
         <p class='error-msg'>{{error}}</p>
         {% endif %}
     </form>

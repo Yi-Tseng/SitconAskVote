@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.shortcuts import render, redirect
 from django.views.decorators.debug import sensitive_post_parameters
 import django.contrib.auth as auth
@@ -13,12 +14,11 @@ def login(request):
     if request.method == 'GET':
         return render(request, 'login.html', context)
 
-    
     username = request.POST['email']
     password = request.POST['password']
     user = auth.authenticate(username=username, password=password)
 
-    if user is not None:
+    if user != None:
 
         if user.is_active:
             auth.login(request, user)
