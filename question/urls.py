@@ -1,5 +1,6 @@
 from django.conf.urls import patterns, url
-from users import views
+from question import views
 urlpatterns = patterns('',
-    url(r'^login$', views.login, name='login'),
+    url(r'^ask$', views.ask),
+    url(r'^view$', views.view_question),
 )
