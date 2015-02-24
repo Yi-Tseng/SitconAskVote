@@ -1,56 +1,56 @@
 {% extends 'core/master.html' %}
 {% block content_block%}
+
 <div class="question-set" align="center">
 
     <div class="question-list" align="left">
         <h1>人氣問題：</h1>
-        <div class="item" id="pop-01">
+        {% for pop in popular %}
+        <div class="item" id="pop-{{pop.id}}">
 
             <div class="title">
-                Test title
-                <a class="btn-collapse" href="#ctx-pop-01">►</a>
+                {{pop.title}}
+                <a class="btn-collapse" href="#ctx-pop-{{pop.id}}">►</a>
             </div>
 
-            <div class="context" id="ctx-pop-01">
+            <div class="context" id="ctx-pop-{{pop.id}}">
 
-                <p>提問者：王小明</p>
+                <p>提問者：{{pop.author}}</p>
+                {% autoescape on %}
+                {{pop.text}}
+                {% endautoescape %}
 
-
-                <p>This is context</p>
-                <p>This is context</p>
-                <p>This is context</p>
-                <p>This is context</p>
-                <p>This is context</p>
-
-                <a id="btn-pop-01" href="#" class="btn-want-this-question">想聽</a>
+                <a id="btn-pop-{{pop.id}}" href="#" class="btn-want-this-question">想聽</a>
 
             </div>
 
         </div>
+        {% endfor %}
     </div>
 
     <div class="question-list" align="left">
         <h1>最新問題：</h1>
-        <div class="item" id="new-01">
+        {% for new_q in newest %}
+        <div class="item" id="new_q-{{new_q.id}}">
+
             <div class="title">
-                Test title
-                <a class="btn-collapse" href="#ctx-new-01">►</a>
+                {{new_q.title}}
+                <a class="btn-collapse" href="#ctx-new_q-{{new_q.id}}">►</a>
             </div>
-            <div class="context" id="ctx-new-01">
 
-                <p>提問者：王小明</p>
+            <div class="context" id="ctx-new_q-{{new_q.id}}">
 
+                <p>提問者：{{new_q.author}}</p>
+                {% autoescape on %}
+                {{new_q.text}}
+                {% endautoescape %}
 
-                <p>This is context</p>
-                <p>This is context</p>
-                <p>This is context</p>
-                <p>This is context</p>
-                <p>This is context</p>
-
-                <a id="btn-new-01" href="#" class="btn-want-this-question">想聽</a>
+                <a id="btn-new_q-{{new_q.id}}" href="#" class="btn-want-this-question">想聽</a>
 
             </div>
+
         </div>
+        {% endfor %}
     </div>
 </div>
 {% endblock %}

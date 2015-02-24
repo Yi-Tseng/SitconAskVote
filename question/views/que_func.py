@@ -1,7 +1,7 @@
  # -*- coding: utf-8 -*-
 
 from django.shortcuts import render, redirect
-from question.models import Question
+from question.models import Question, WantListen
 
 def ask(request):
 
@@ -30,6 +30,18 @@ def ask(request):
 def view_question(request):
     questions = Question.objects.all()
 
+    # Update want count
+    # TODO: need other method to update this count
 
+    for que in questions:
+        count = WantListen.objects.filter(question=que.id).count()
+        que.want = count
+        que.save()
 
-    return render(request, 'view.html', {'questions':questions})
+    popular = list(questions)
+    newest = list(questions)
+
+    popular.sort(key=lambda x: x.want, reverse=True)
+    newest.sort(key=lambda x: x.id, reverse=True)
+    
+    return render(request, 'view.html', {'popular':popular, 'newest':newest})
