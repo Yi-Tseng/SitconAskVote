@@ -20,7 +20,7 @@ $(".btn-want-this-question").click(function(e) {
         $(sel).addClass("wanted");
         $(sel).html("已列入想聽名單");
     }
-    
+
     var qid = e.target.id.split('-')[2];
     $.get('/question/want?qid=' + qid);
 });
@@ -53,3 +53,4 @@ $(".btn-form-login").click(function(e) {
 $(".btn-ask").click(function(e) {
     $("#ask-form").submit();
 });
+
