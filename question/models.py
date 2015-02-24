@@ -8,7 +8,7 @@ class Question(models.Model):
     text = models.CharField(max_length=256)
     solved = models.BooleanField(default=False)
     author = models.ForeignKey(User)
-    want = models.IntegerField()
+    want = models.IntegerField(default=0)
 
     class Meta:
         db_table = 'questions'
