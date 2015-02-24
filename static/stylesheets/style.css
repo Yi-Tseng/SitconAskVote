@@ -606,3 +606,21 @@ footer {
 .btn-change-profile:hover {
   color: #5E2923;
 }
+
+/* line 3, ../sass/_admin.scss */
+.admin-btn {
+  color: #FFF;
+  border-bottom-style: solid;
+  border-color: #FFF;
+  border-width: 1px;
+  background-color: #ba5347;
+  padding: 2px;
+}
+/* line 12, ../sass/_admin.scss */
+.admin-btn:link {
+  text-decoration: none;
+}
+/* line 16, ../sass/_admin.scss */
+.admin-btn:hover {
+  background-color: #5e2923;
+}
