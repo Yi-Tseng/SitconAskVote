@@ -5,12 +5,10 @@ import json
 from django.shortcuts import render, redirect
 from question.models import Question, WantListen
 from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
 
-
+@login_required
 def ask(request):
-
-    if not request.user or not request.user.is_authenticated():
-        return redirect('/user/login')
 
     if request.method == 'GET':
         return render(request, 'ask.html')
@@ -98,4 +96,57 @@ def want_listen(request):
 
     return HttpResponse(json.dumps(response_data), content_type="application/json")
 
+@login_required
+def edit(request):
+    
+    if request.method == 'GET':
+        render(request, 'edit.html')
 
+@login_required
+def delete(request):
+    
+    try:
+        que = Question.objects.get(id=request.GET['qid'])
+
+        if que.author == request.user or request.user.is_staff:
+            want_list = WantListen.objects.filter(question=que)
+
+            for wl in want_list:
+                wl.delete()
+
+            que.delete()
+
+    except:
+        pass
+
+    return redirect('/question/view')
+
+@login_required
+def solve(request):
+
+    try:
+        que = Question.objects.get(id=request.GET['qid'])
+
+        if request.user.is_staff:
+            que.solved = True
+            que.save()
+
+    except:
+        pass
+
+    return redirect('/question/view')
+
+@login_required
+def unsolve(request):
+
+    try:
+        que = Question.objects.get(id=request.GET['qid'])
+
+        if request.user.is_staff:
+            que.solved = False
+            que.save()
+
+    except:
+        pass
+
+    return redirect('/question/view')

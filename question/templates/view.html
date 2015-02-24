@@ -11,17 +11,24 @@
 
             <div class="title">
                 {{pop.title}} <b>({{pop.want}}人想聽)</b>
+                {% if pop.solved %}
+                <b>已回答</b>
+                {% endif %}
 
                 <!-- 管理用 -->
                 {% if pop.author.id == user.id %}
-                <a class="admin-btn" href="/question/edit/{{pop.id}}">編輯</a>
-                <a class="admin-btn" href="/question/del/{{pop.id}}">刪除</a>
+                <a class="admin-btn" href="/question/edit?qid={{pop.id}}">編輯</a>
+                <a class="admin-btn" href="/question/del?qid={{pop.id}}">刪除</a>
                     {% if user.is_staff %}
-                    <a class="admin-btn" href="/question/solve/{{pop.id}}">已解決</a>
+                    <a class="admin-btn" href="/question/solve?qid={{pop.id}}">已解決</a>
                     {% endif %}
                 {% elif user.is_staff %}
-                <a class="admin-btn" href="/question/del/{{pop.id}}">刪除</a>
-                <a class="admin-btn" href="/question/solve/{{pop.id}}">已解決</a>
+                <a class="admin-btn" href="/question/del?qid={{pop.id}}">刪除</a>
+                    {% if not pop.solved %}
+                    <a class="admin-btn" href="/question/solve?qid={{pop.id}}">已解決</a>
+                    {% else %}
+                    <a class="admin-btn" href="/question/unsolve?qid={{pop.id}}">未解決</a>
+                    {% endif %}
                 {% endif %}
                 <!-- 管理用 -->
 
@@ -56,18 +63,23 @@
 
             <div class="title">
                 {{new_q.title}} <b>({{new_q.want}}人想聽)</b>
-
+                {% if new_q.solved %}
+                <b>已回答</b>
+                {% endif %}
                 <!-- 管理用 -->
                 {% if new_q.author.id == user.id %}
-                <a class="admin-btn" href="/question/edit/{{new_q.id}}">編輯</a>
-                <a class="admin-btn" href="/question/del/{{new_q.id}}">刪除</a>
+                <a class="admin-btn" href="/question/edit?qid={{new_q.id}}">編輯</a>
+                <a class="admin-btn" href="/question/del?qid={{new_q.id}}">刪除</a>
                     {% if user.is_staff %}
-                    <a class="admin-btn" href="/question/del/{{new_q.id}}">刪除</a>
-                    <a class="admin-btn" href="/question/solve/{{new_q.id}}">已解決</a>
+                    <a class="admin-btn" href="/question/solve?qid={{new_q.id}}">已解決</a>
                     {% endif %}
                 {% elif user.is_staff %}
-                <a class="admin-btn" href="/question/del/{{new_q.id}}">刪除</a>
-                <a class="admin-btn" href="/question/solve/{{new_q.id}}">已解決</a>
+                <a class="admin-btn" href="/question/del?qid={{new_q.id}}">刪除</a>
+                    {% if not new_q.solved %}
+                    <a class="admin-btn" href="/question/solve?qid={{new_q.id}}">已解決</a>
+                    {% else %}
+                    <a class="admin-btn" href="/question/unsolve?qid={{new_q.id}}">未解決</a>
+                    {% endif %}
                 {% endif %}
                 <!-- 管理用 -->
 
