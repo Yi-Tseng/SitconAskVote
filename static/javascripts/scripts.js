@@ -62,3 +62,7 @@ $(".btn-ask").click(function(e) {
     $("#ask-form").submit();
 });
 
+$(".btn-change-profile").click(function(e) {
+    $("#profile-form").submit();
+});
+

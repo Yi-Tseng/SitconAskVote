@@ -6,6 +6,7 @@ from django.views.decorators.debug import sensitive_post_parameters
 from django.contrib.auth.models import User
 from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
+from django.contrib.auth.decorators import login_required
 
 @sensitive_post_parameters('password')
 def register(request):
@@ -45,4 +46,21 @@ def register(request):
         context['message'] = '註冊確認信已寄至您的信箱'
         return render(request, 'msg.html', context)
 
+@login_required
+def profile(request):
 
+    if request.method == 'GET':
+        return render('profile.html')
+
+    user = request.user
+    nickname = request.POST.nickname
+    password = request.POST.password
+    user.nickname = nickname
+
+    if password != '':
+        user.set_password(password)
+
+    user.save()
+
+    # TODO: add error message
+    return render('profile.html')
