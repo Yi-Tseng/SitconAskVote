@@ -1,7 +1,11 @@
  # -*- coding: utf-8 -*-
 
+import json
+
 from django.shortcuts import render, redirect
 from question.models import Question, WantListen
+from django.http import HttpResponse
+
 
 def ask(request):
 
@@ -43,5 +47,34 @@ def view_question(request):
 
     popular.sort(key=lambda x: x.want, reverse=True)
     newest.sort(key=lambda x: x.id, reverse=True)
+
+    want_list = []
+
+    if request.user and request.user.is_authenticated():
+        want_list = WantListen.objects.filter(user=request.user)
+        want_list = [w.question.id for w in want_list]
     
-    return render(request, 'view.html', {'popular':popular, 'newest':newest})
+    return render(request, 'view.html', {'popular':popular, 'newest':newest, 'want_list':want_list})
+
+
+def want_listen(request):
+    response_data = {}
+
+    if request.user and request.user.is_authenticated():
+        que = None
+        try:
+            que = Question.objects.get(id=request.GET.qid)
+            want = WantListen.objects.get(user=request.user, question=que)
+            want.delete()
+
+        except WantListen.DoesNotExist, e:
+            want = WantListen()
+            if que != None:
+                want.question = que
+                want.user = request.user
+                want.save()
+
+        except Question.DoesNotExist, e:
+            pass
+
+    return HttpResponse(json.dumps(response_data), content_type="application/json")

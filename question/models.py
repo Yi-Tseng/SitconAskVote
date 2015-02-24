@@ -16,7 +16,7 @@ class Question(models.Model):
 class WantListen(models.Model):
     id = models.AutoField(primary_key=True)
     question = models.ForeignKey(Question)
-    user_id = models.ForeignKey(User)
+    user = models.ForeignKey(User)
 
     class Meta:
         db_table = 'want_listen'

@@ -20,7 +20,9 @@
                 {{pop.text}}
                 {% endautoescape %}
 
+                {% if user.is_authenticated %}
                 <a id="btn-pop-{{pop.id}}" href="#" class="btn-want-this-question">想聽</a>
+                {% endif %}
 
             </div>
 
@@ -45,7 +47,9 @@
                 {{new_q.text}}
                 {% endautoescape %}
 
+                {% if user.is_authenticated %}
                 <a id="btn-new_q-{{new_q.id}}" href="#" class="btn-want-this-question">想聽</a>
+                {% endif %}
 
             </div>
 
