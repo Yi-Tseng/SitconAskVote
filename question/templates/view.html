@@ -1,0 +1,56 @@
+{% extends 'core/master.html' %}
+{% block content_block%}
+<div class="question-set" align="center">
+
+    <div class="question-list" align="left">
+        <h1>人氣問題：</h1>
+        <div class="item" id="pop-01">
+
+            <div class="title">
+                Test title
+                <a class="btn-collapse" href="#ctx-pop-01">►</a>
+            </div>
+
+            <div class="context" id="ctx-pop-01">
+
+                <p>提問者：王小明</p>
+
+
+                <p>This is context</p>
+                <p>This is context</p>
+                <p>This is context</p>
+                <p>This is context</p>
+                <p>This is context</p>
+
+                <a id="btn-pop-01" href="#" class="btn-want-this-question">想聽</a>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="question-list" align="left">
+        <h1>最新問題：</h1>
+        <div class="item" id="new-01">
+            <div class="title">
+                Test title
+                <a class="btn-collapse" href="#ctx-new-01">►</a>
+            </div>
+            <div class="context" id="ctx-new-01">
+
+                <p>提問者：王小明</p>
+
+
+                <p>This is context</p>
+                <p>This is context</p>
+                <p>This is context</p>
+                <p>This is context</p>
+                <p>This is context</p>
+
+                <a id="btn-new-01" href="#" class="btn-want-this-question">想聽</a>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
