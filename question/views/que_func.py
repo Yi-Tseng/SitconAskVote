@@ -20,16 +20,16 @@ def ask(request):
 
     # TODO: add xss protection
     new_que.title = title
-    new_que.context = context
+    new_que.text = context
     new_que.author = author
     new_que.save()
 
     # TODO: add error message
     return redirect('/question/view')
 
-
-
-
 def view_question(request):
-    questions = Question.objects.get()
+    questions = Question.objects.all()
+
+
+
     return render(request, 'view.html', {'questions':questions})
