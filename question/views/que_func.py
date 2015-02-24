@@ -75,6 +75,8 @@ def want_listen(request):
             que = Question.objects.get(id=request.GET['qid'])
             want = WantListen.objects.get(user=request.user, question=que)
             want.delete()
+            que.want = que.want - 1
+            que.save()
 
         except WantListen.DoesNotExist, e:
             want = WantListen()
@@ -82,6 +84,8 @@ def want_listen(request):
                 want.question = que
                 want.user = request.user
                 want.save()
+                que.want = que.want + 1
+                que.save()
 
         except Question.DoesNotExist, e:
             pass
