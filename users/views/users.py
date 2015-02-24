@@ -53,9 +53,9 @@ def profile(request):
         return render('profile.html')
 
     user = request.user
-    nickname = request.POST.nickname
-    password = request.POST.password
-    user.nickname = nickname
+    nickname = request.POST['nickname']
+    password = request.POST['password']
+    user.last_name = nickname
 
     if password != '':
         user.set_password(password)
@@ -63,4 +63,4 @@ def profile(request):
     user.save()
 
     # TODO: add error message
-    return render('profile.html')
+    return render(request, 'profile.html')
