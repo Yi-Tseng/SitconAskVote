@@ -9,4 +9,4 @@ setInterval(function() {
 		}
 		
 	}, 'json')
-}, 5000);
+}, 2000);
