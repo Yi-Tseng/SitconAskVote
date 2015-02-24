@@ -5,6 +5,7 @@ setInterval(function() {
 		console.log(data);
 		for(k in data) {
 			$("#pop-" + k + " .title b").html("(" + data[k] + "人想聽)")
+			$("#new_q-" + k + " .title b").html("(" + data[k] + "人想聽)")
 		}
 		
 	}, 'json')
