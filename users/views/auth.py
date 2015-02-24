@@ -25,10 +25,10 @@ def login(request):
 
             return redirect('/')
 
-        context['error'] = 'account_disabled'
+        context['error'] = '帳號未啟用'
 
     else:
-        context['error'] = 'invalid_login'
+        context['error'] = '找不到帳號'
     
 
     return render(request, 'login.html', context)

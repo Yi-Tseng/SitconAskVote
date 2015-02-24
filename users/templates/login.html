@@ -15,10 +15,8 @@
         <div class="field">
             <a href="#" class="btn-form-login">登入</a>
         </div>
-        {% if error != None %}
-        <div class="field">
-            <h2>{{ error }}</h2>
-        </div>
+        {% if error is not None %}
+        <p class='error-msg'>{{error}}</p>
         {% endif %}
     </form>
 </div>
