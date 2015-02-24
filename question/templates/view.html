@@ -89,7 +89,7 @@
 
             <div class="context" id="ctx-new_q-{{new_q.id}}">
 
-                <p>提問者：{{new_q.author}}</p>
+                <p>提問者：{{new_q.author.last_name}}</p>
                 {% autoescape on %}
                 {{new_q.text}}
                 {% endautoescape %}

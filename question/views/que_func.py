@@ -98,16 +98,21 @@ def want_listen(request):
 
 @login_required
 def edit(request):
-    qid = request.GET['qid']
     if request.method == 'GET':
 
+        if 'qid' not in request.GET:
+            return render(request, 'msg.html', {'message':'Oops, 好像有東西出錯了，請再試一次'})
+
+        qid = request.GET['qid']
         try:
             question = Question.objects.get(id=qid)
 
-            return render(request, 'edit.html', question)
+            return render(request, 'edit.html', {'question':question})
 
-        except:
+        except Exception, e:
             return render(request, 'msg.html', {'message':'Oops, 好像有東西出錯了，請再試一次'})
+
+    qid = request.POST['qid']
 
     title = request.POST['title']
     context = request.POST['context']
@@ -129,7 +134,7 @@ def edit(request):
 
 @login_required
 def delete(request):
-    
+
     try:
         que = Question.objects.get(id=request.GET['qid'])
 
