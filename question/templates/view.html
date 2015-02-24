@@ -21,7 +21,7 @@
                 {% endautoescape %}
 
                 {% if user.is_authenticated %}
-                <a id="btn-pop-{{pop.id}}" href="#" class="btn-want-this-question">想聽</a>
+                <a id="btn-pop-{{pop.id}}" href="#" class="btn-want-this-question {{'want' if pop.id in want_list else ''}}">{{'已列入想聽名單' if pop.id in want_list else '想聽'}}</a>
                 {% endif %}
 
             </div>
@@ -48,7 +48,7 @@
                 {% endautoescape %}
 
                 {% if user.is_authenticated %}
-                <a id="btn-new_q-{{new_q.id}}" href="#" class="btn-want-this-question">想聽</a>
+                <a id="btn-new_q-{{new_q.id}}" href="#" class="btn-want-this-question {{'want' if new_q.id in want_list else ''}}">{{'已列入想聽名單' if new_q.id in want_list else '想聽'}}</a>
                 {% endif %}
 
             </div>
