@@ -22,7 +22,7 @@
 
                 {% if user.is_authenticated %}
                     {% if pop.id in want_list %}
-                        <a id="btn-pop-{{pop.id}}" href="#" class="btn-want-this-question want">已列入想聽名單</a>
+                        <a id="btn-pop-{{pop.id}}" href="#" class="btn-want-this-question wanted">已列入想聽名單</a>
                     {% else %}
                         <a id="btn-pop-{{pop.id}}" href="#" class="btn-want-this-question">想聽</a>
                     {% endif %}
@@ -53,7 +53,7 @@
 
                 {% if user.is_authenticated %}
                     {% if new_q.id in want_list %}
-                        <a id="btn-new_q-{{new_q.id}}" href="#" class="btn-want-this-question want">已列入想聽名單</a>
+                        <a id="btn-new_q-{{new_q.id}}" href="#" class="btn-want-this-question wanted">已列入想聽名單</a>
                     {% else %}
                         <a id="btn-new_q-{{new_q.id}}" href="#" class="btn-want-this-question">想聽</a>
                     {% endif %}
