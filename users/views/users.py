@@ -50,7 +50,7 @@ def register(request):
 def profile(request):
 
     if request.method == 'GET':
-        return render('profile.html')
+        return render(request, 'profile.html')
 
     user = request.user
     nickname = request.POST.nickname
@@ -63,4 +63,4 @@ def profile(request):
     user.save()
 
     # TODO: add error message
-    return render('profile.html')
+    return render(request, 'profile.html')
