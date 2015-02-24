@@ -638,3 +638,22 @@ footer {
 .admin-btn:hover {
   background-color: #5e2923;
 }
+
+/* line 2, ../sass/_forget.scss */
+.btn-send-forget {
+  display: block;
+  background-color: #ba5347;
+  color: #FFF;
+  padding: 20px;
+  border-radius: 5px;
+  font-size: 1.3em;
+  text-align: center;
+}
+/* line 11, ../sass/_forget.scss */
+.btn-send-forget:link {
+  text-decoration: none;
+}
+/* line 15, ../sass/_forget.scss */
+.btn-send-forget:hover {
+  color: #5E2923;
+}

@@ -1,7 +1,7 @@
 {% extends 'core/master.html' %}
 {% block content_block%}
 <div class="frame">
-    <form class="form" action="/user/forget" method="POST">
+    <form id="forget-form" class="form" action="/user/forget" method="POST">
         <div class="field">
             <h2>電子郵件：</h2>
             <input name="email"/>
