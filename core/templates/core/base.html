@@ -19,9 +19,11 @@
         <div class="container">
             {% block content_block %}
             {% endblock %}
+
+            {% block footer %}
+            {% endblock %}
         </div>
-        {% block footer %}
-        {% endblock %}
+        
         
         <script src="{% static 'javascripts/jquery-1.11.2.min.js' %}"></script>
         <script src="{% static 'javascripts/scripts.js' %}"></script>
