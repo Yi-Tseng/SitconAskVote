@@ -16,8 +16,18 @@ def ask(request):
     context = request.POST['context']
     author = request.user.id
 
-    print title, context, author
-    return render(request, 'ask.html')
+    new_que = Question()
+
+    # TODO: add xss protection
+    new_que.title = title
+    new_que.context = context
+    new_que.author = author
+    new_que.save()
+
+    # TODO: add error message
+    return redirect('/question/view')
+
+
 
 
 def view_question(request):
