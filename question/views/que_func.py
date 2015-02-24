@@ -9,6 +9,7 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def ask(request):
+    error = None
 
     if request.method == 'GET':
         return render(request, 'ask.html')
@@ -18,16 +19,23 @@ def ask(request):
     context = request.POST['context']
     author = request.user
 
-    new_que = Question()
+    if len(title) == 0 or len(title) > 64:
+        error = '標題長度有誤'
 
-    # TODO: add xss protection
-    new_que.title = title
-    new_que.text = context
-    new_que.author = author
-    new_que.save()
+    if len(context) == 0 or len(context) > 64:
+        error = '內容長度有誤'
 
-    # TODO: add error message
-    return redirect('/question/view')
+    if not error:
+        new_que = Question()
+        new_que.title = title
+        new_que.text = context
+        new_que.author = author
+        new_que.save()
+
+        return redirect('/question/view')
+
+    else:
+        return render(request, 'ask.html', {'error':error})
 
 def view_question(request):
     questions = Question.objects.all()
@@ -98,12 +106,14 @@ def want_listen(request):
 
 @login_required
 def edit(request):
+
     if request.method == 'GET':
 
         if 'qid' not in request.GET:
             return render(request, 'msg.html', {'message':'Oops, 好像有東西出錯了，請再試一次'})
 
         qid = request.GET['qid']
+
         try:
             question = Question.objects.get(id=qid)
 
@@ -113,12 +123,11 @@ def edit(request):
             return render(request, 'msg.html', {'message':'Oops, 好像有東西出錯了，請再試一次'})
 
     qid = request.POST['qid']
-
     title = request.POST['title']
     context = request.POST['context']
 
     if len(title) == 0 or len(context) == 0:
-        return render(request, 'msg.html', {'message':'標題或內容長度不得為零，請再試一次'})
+        return render(request, 'edit.html', {'error':'標題或內容長度不得為零，請再試一次'})
 
     try:
         question = Question.objects.get(id=qid)

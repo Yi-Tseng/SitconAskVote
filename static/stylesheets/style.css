@@ -1,20 +1,21 @@
 /* line 3, ../sass/_main.scss */
 html {
   background: none repeat scroll 0% 0% #151924;
+  background-image: url("/images/bg-grid.png");
   background-image: url("/static/images/bg-grid.png");
 }
 
-/* line 8, ../sass/_main.scss */
+/* line 9, ../sass/_main.scss */
 body {
   color: #ba5347;
 }
 
-/* line 13, ../sass/_main.scss */
+/* line 14, ../sass/_main.scss */
 .container {
   padding: 0 40px;
 }
 
-/* line 17, ../sass/_main.scss */
+/* line 18, ../sass/_main.scss */
 .frame {
   margin: 30px auto;
   width: 50%;
@@ -23,28 +24,28 @@ body {
   min-height: 500px;
 }
 
-/* line 26, ../sass/_main.scss */
+/* line 27, ../sass/_main.scss */
 .form {
   padding: 50px 0;
   margin: auto 20px;
 }
 
-/* line 31, ../sass/_main.scss */
+/* line 32, ../sass/_main.scss */
 .field {
   margin: 10px 0;
 }
-/* line 34, ../sass/_main.scss */
+/* line 35, ../sass/_main.scss */
 .field p {
   font-size: 0.8em;
   padding: 10px 0px;
 }
-/* line 39, ../sass/_main.scss */
+/* line 40, ../sass/_main.scss */
 .field h2 {
   color: #FFF;
   font-size: 1.4em;
   display: inline;
 }
-/* line 45, ../sass/_main.scss */
+/* line 46, ../sass/_main.scss */
 .field input {
   background-color: transparent;
   border-style: solid;
@@ -55,7 +56,7 @@ body {
   width: 100%;
   font-size: 1.4em;
 }
-/* line 56, ../sass/_main.scss */
+/* line 57, ../sass/_main.scss */
 .field textarea {
   width: 95%;
   min-height: 400px;
@@ -68,24 +69,30 @@ body {
   padding: 3px;
 }
 
+/* line 70, ../sass/_main.scss */
+.error-msg {
+  font-size: 1.3em;
+  color: #FFF;
+}
+
 @media (max-width: 810px) {
-  /* line 71, ../sass/_main.scss */
+  /* line 77, ../sass/_main.scss */
   .frame {
     width: 80%;
   }
 
-  /* line 75, ../sass/_main.scss */
+  /* line 81, ../sass/_main.scss */
   .container {
     padding: 0 20px;
   }
 }
 @media (max-width: 500px) {
-  /* line 81, ../sass/_main.scss */
+  /* line 87, ../sass/_main.scss */
   .frame {
     width: 100%;
   }
 
-  /* line 85, ../sass/_main.scss */
+  /* line 91, ../sass/_main.scss */
   .container {
     padding: 0 10px;
   }
@@ -300,7 +307,14 @@ footer {
 }
 /* line 5, ../sass/_index.scss */
 .logo img {
+  margin: 30px 0px;
   width: 100%;
+}
+/* line 9, ../sass/_index.scss */
+.logo h1 {
+  margin: 30px 0px;
+  font-size: 5em;
+  text-align: center;
 }
 
 /* line 3, ../sass/_register.scss */

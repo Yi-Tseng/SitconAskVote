@@ -14,6 +14,9 @@
         <div class="field" align="center">
             <a href="#" class="btn-ask">提出問題</a>
         </div>
+        {% if error is not None %}
+        <p class='error-msg'>{{error}}</p>
+        {% endif %}
     </form>
 </div>
 {% endblock %}
