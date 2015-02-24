@@ -53,8 +53,8 @@ def profile(request):
         return render(request, 'profile.html')
 
     user = request.user
-    nickname = request.POST.nickname
-    password = request.POST.password
+    nickname = request.POST['nickname']
+    password = request.POST['password']
     user.nickname = nickname
 
     if password != '':
