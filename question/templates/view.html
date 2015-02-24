@@ -10,11 +10,11 @@
         <div class="item" id="pop-{{pop.id}}">
 
             <div class="title">
-                {{pop.title}} <b>({{pop.want}}人想聽)</b>
+                {{pop.title}}
                 {% if pop.solved %}
-                <b>已回答</b>
+                [已回答]
                 {% endif %}
-
+                <b>({{pop.want}}人想聽)</b>
                 <!-- 管理用 -->
                 {% if pop.author.id == user.id %}
                 <a class="admin-btn" href="/question/edit?qid={{pop.id}}">編輯</a>
@@ -62,10 +62,11 @@
         <div class="item" id="new_q-{{new_q.id}}">
 
             <div class="title">
-                {{new_q.title}} <b>({{new_q.want}}人想聽)</b>
+                {{new_q.title}}
                 {% if new_q.solved %}
-                <b>已回答</b>
+                [已回答]
                 {% endif %}
+                <b>({{new_q.want}}人想聽)</b>
                 <!-- 管理用 -->
                 {% if new_q.author.id == user.id %}
                 <a class="admin-btn" href="/question/edit?qid={{new_q.id}}">編輯</a>
