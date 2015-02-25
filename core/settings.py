@@ -10,7 +10,7 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-from .db import db_config
+from private_data import db_config, email_config
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
@@ -110,4 +110,14 @@ STATICFILES_FINDERS = (
 )
 
 LOGIN_URL = '/user/login'
+
+
+# email
+DEFAULT_FROM_EMAIL = "contact@ask.sitcon.org"
+EMAIL_HOST = email_config['host']
+EMAIL_PORT = email_config['port']
+EMAIL_HOST_USER = email_config['user']
+EMAIL_HOST_PASSWORD = email_config['password']
+
+
 

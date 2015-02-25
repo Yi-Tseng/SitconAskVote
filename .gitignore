@@ -4,3 +4,4 @@ build*
 db.py
 fire_app_log.txt
 migrations
+private_data.py
