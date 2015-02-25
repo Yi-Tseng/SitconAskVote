@@ -10,3 +10,12 @@ class ResetPasswordToken(models.Model):
 
     class Meta:
         db_table = 'reset_password_token'
+
+class UserRegisterToken(models.Model):
+    id = models.AutoField(primary_key=True)
+    user = models.ForeignKey(User)
+    token = models.CharField(max_length=64)
+
+    class Meta:
+        db_table = 'user_register_token'
+
