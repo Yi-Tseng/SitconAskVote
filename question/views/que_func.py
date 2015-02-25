@@ -39,6 +39,7 @@ def ask(request):
 
 def view_question(request):
     questions = Question.objects.all()
+    questions = list(questions)
     order_pop = True
     
     if 'order' in request.GET:

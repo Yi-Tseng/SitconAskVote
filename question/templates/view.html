@@ -5,11 +5,18 @@
 <div class="question-set" align="center">
 
     <div class="question-list" align="left">
-        
         <div class="order-set">
-            <a class="{{'bright-link' if order_pop else 'dark-link'}}" href="/question/view?order=popular">人氣問題</a>
+            {% if pop %}
+            <a class="bright-link" href="/question/view?order=popular">人氣問題</a>
+            {% else %}
+            <a class="bright-link" href="/question/view?order=time">最新問題</a>
+            {% endif %}
             <p class="dark-text">/</p>
-            <a class="{{'dark-link' if order_pop else 'bright-link'}}" href="/question/view?order=time">最新問題：</a>
+            {% if not pop %}
+            <a class="dark-link" href="/question/view?order=popular">人氣問題：</a>
+            {% else %}
+            <a class="dark-link" href="/question/view?order=time">最新問題：</a>
+            {% endif %}
         </div>
         {% for que in questions %}
         <div class="item" id="que-{{que.id}}">
