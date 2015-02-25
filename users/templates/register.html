@@ -5,18 +5,18 @@
         {% csrf_token %}
         <div class="field">
             <h2>電子郵件：</h2>
-            <input name="email"/>
+            <input name="email" type="text"/>
         </div>
         <div class="field">
             <h2>暱稱：</h2>
-            <input name="nickname"/>
+            <input name="nickname" type="text"/>
         </div>
         <div class="field">
             <h2>密碼：</h2>
             <input name="password" type="password" />
         </div>
         <div class="field">
-            <a href="#" class="btn-send-register">送出</a>
+            <input name="submit" type="submit" value="送出"/>
         </div>
         {% if error != None %}
         <p class='error-msg'>{{error}}</p>
