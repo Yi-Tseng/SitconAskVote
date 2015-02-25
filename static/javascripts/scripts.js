@@ -48,24 +48,3 @@ $(".btn-collapse").click(function(e) {
         e.target.innerHTML = "▼";
     }
 });
-
-
-$(".btn-send-register").click(function(e) {
-    $("#reg_form").submit();
-});
-
-$(".btn-form-login").click(function(e) {
-    $("#login_form").submit();
-});
-
-$(".btn-ask").click(function(e) {
-    $("#ask-form").submit();
-});
-
-$(".btn-change-profile").click(function(e) {
-    $("#profile-form").submit();
-});
-
-$(".btn-send-forget").click(function(e) {
-    $("#form-forget").submit();
-});

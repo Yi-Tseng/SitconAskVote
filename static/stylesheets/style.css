@@ -46,7 +46,7 @@ body {
   display: inline;
 }
 /* line 46, ../sass/_main.scss */
-.field input {
+.field input[type="text"], .field input[type="password"] {
   background-color: transparent;
   border-style: solid;
   border-width: 0px 0px 1px 0px;
@@ -57,6 +57,26 @@ body {
   font-size: 1.4em;
 }
 /* line 57, ../sass/_main.scss */
+.field input[type="submit"] {
+  width: 100%;
+  border-width: 0;
+  display: block;
+  background-color: #ba5347;
+  color: #FFF;
+  padding: 20px;
+  border-radius: 5px;
+  font-size: 1.3em;
+  text-align: center;
+}
+/* line 68, ../sass/_main.scss */
+.field input[type="submit"]:link {
+  text-decoration: none;
+}
+/* line 72, ../sass/_main.scss */
+.field input[type="submit"]:hover {
+  color: #5E2923;
+}
+/* line 77, ../sass/_main.scss */
 .field textarea {
   width: 95%;
   min-height: 400px;
@@ -69,30 +89,66 @@ body {
   padding: 3px;
 }
 
-/* line 70, ../sass/_main.scss */
+/* line 90, ../sass/_main.scss */
 .error-msg {
   font-size: 1.3em;
   color: #FFF;
 }
 
+/* line 95, ../sass/_main.scss */
+.bright-text {
+  color: #ba5347;
+}
+
+/* line 99, ../sass/_main.scss */
+.dark-text {
+  color: #5e2923;
+}
+
+/* line 103, ../sass/_main.scss */
+.bright-link {
+  color: #ba5347;
+}
+/* line 106, ../sass/_main.scss */
+.bright-link:link {
+  text-decoration: none;
+}
+/* line 110, ../sass/_main.scss */
+.bright-link:hover {
+  color: #5e2923;
+}
+
+/* line 115, ../sass/_main.scss */
+.dark-link {
+  color: #5e2923;
+}
+/* line 118, ../sass/_main.scss */
+.dark-link:link {
+  text-decoration: none;
+}
+/* line 122, ../sass/_main.scss */
+.dark-link:hover {
+  color: #ba5347;
+}
+
 @media (max-width: 810px) {
-  /* line 77, ../sass/_main.scss */
+  /* line 129, ../sass/_main.scss */
   .frame {
     width: 80%;
   }
 
-  /* line 81, ../sass/_main.scss */
+  /* line 133, ../sass/_main.scss */
   .container {
     padding: 0 20px;
   }
 }
 @media (max-width: 500px) {
-  /* line 87, ../sass/_main.scss */
+  /* line 139, ../sass/_main.scss */
   .frame {
     width: 100%;
   }
 
-  /* line 91, ../sass/_main.scss */
+  /* line 143, ../sass/_main.scss */
   .container {
     padding: 0 10px;
   }
@@ -317,25 +373,6 @@ footer {
   text-align: center;
 }
 
-/* line 3, ../sass/_register.scss */
-.btn-send-register {
-  display: block;
-  background-color: #ba5347;
-  color: #FFF;
-  padding: 20px;
-  border-radius: 5px;
-  font-size: 1.3em;
-  text-align: center;
-}
-/* line 12, ../sass/_register.scss */
-.btn-send-register:link {
-  text-decoration: none;
-}
-/* line 16, ../sass/_register.scss */
-.btn-send-register:hover {
-  color: #5E2923;
-}
-
 /* line 3, ../sass/_login.scss */
 .forget-pwd {
   color: #ba5347;
@@ -350,25 +387,6 @@ footer {
   color: #FFF;
 }
 
-/* line 15, ../sass/_login.scss */
-.btn-form-login {
-  display: block;
-  background-color: #ba5347;
-  color: #FFF;
-  padding: 20px;
-  border-radius: 5px;
-  font-size: 1.3em;
-  text-align: center;
-}
-/* line 24, ../sass/_login.scss */
-.btn-form-login:link {
-  text-decoration: none;
-}
-/* line 28, ../sass/_login.scss */
-.btn-form-login:hover {
-  color: #5E2923;
-}
-
 /* line 3, ../sass/_question.scss */
 .question-list {
   border-style: solid;
@@ -377,7 +395,7 @@ footer {
   padding: 10px;
   color: #FFF;
   display: inline-block;
-  width: 45%;
+  width: 80%;
   min-height: 600px;
   margin: 0 10px;
   vertical-align: top;
@@ -427,7 +445,17 @@ footer {
   width: 90%;
 }
 
+/* line 61, ../sass/_question.scss */
+.order-set {
+  padding: 10px 0;
+}
 /* line 62, ../sass/_question.scss */
+.order-set a, .order-set p {
+  font-size: 1.3em;
+  display: inline-block;
+}
+
+/* line 71, ../sass/_question.scss */
 .btn-want-this-question {
   display: block;
   background-color: #000;
@@ -442,63 +470,43 @@ footer {
   -webkit-transition: width .5s;
   transition: width .5s;
 }
-/* line 76, ../sass/_question.scss */
+/* line 85, ../sass/_question.scss */
 .btn-want-this-question:link {
   text-decoration: none;
 }
-/* line 80, ../sass/_question.scss */
+/* line 89, ../sass/_question.scss */
 .btn-want-this-question:hover {
   color: #555;
 }
 
-/* line 88, ../sass/_question.scss */
+/* line 97, ../sass/_question.scss */
 .wanted {
   background-color: #ba5347;
   width: 120px;
   -webkit-transition: width .5s;
   transition: width .5s;
 }
-/* line 92, ../sass/_question.scss */
+/* line 101, ../sass/_question.scss */
 .wanted:link {
   text-decoration: none;
 }
-/* line 96, ../sass/_question.scss */
+/* line 105, ../sass/_question.scss */
 .wanted:hover {
   color: #5E2923;
 }
 
 @media (max-width: 1050px) {
-  /* line 106, ../sass/_question.scss */
+  /* line 115, ../sass/_question.scss */
   .question-list {
     width: 70%;
   }
 }
 @media (max-width: 810px) {
-  /* line 114, ../sass/_question.scss */
+  /* line 123, ../sass/_question.scss */
   .question-list {
     width: 100%;
   }
 }
-/* line 3, ../sass/_ask.scss */
-.btn-ask {
-  display: block;
-  background-color: #ba5347;
-  color: #FFF;
-  padding: 10px;
-  border-radius: 5px;
-  font-size: 1em;
-  text-align: center;
-  width: 30%;
-}
-/* line 13, ../sass/_ask.scss */
-.btn-ask:link {
-  text-decoration: none;
-}
-/* line 17, ../sass/_ask.scss */
-.btn-ask:hover {
-  color: #5e2923;
-}
-
 /* line 1, ../sass/_about.scss */
 .about {
   margin: 50px 0;
@@ -602,25 +610,6 @@ footer {
   font-size: 1.4em;
 }
 
-/* line 3, ../sass/_profile.scss */
-.btn-change-profile {
-  display: block;
-  background-color: #ba5347;
-  color: #FFF;
-  padding: 20px;
-  border-radius: 5px;
-  font-size: 1.3em;
-  text-align: center;
-}
-/* line 12, ../sass/_profile.scss */
-.btn-change-profile:link {
-  text-decoration: none;
-}
-/* line 16, ../sass/_profile.scss */
-.btn-change-profile:hover {
-  color: #5E2923;
-}
-
 /* line 3, ../sass/_admin.scss */
 .admin-btn {
   color: #FFF;
@@ -637,23 +626,4 @@ footer {
 /* line 16, ../sass/_admin.scss */
 .admin-btn:hover {
   background-color: #5e2923;
-}
-
-/* line 2, ../sass/_forget.scss */
-.btn-send-forget {
-  display: block;
-  background-color: #ba5347;
-  color: #FFF;
-  padding: 20px;
-  border-radius: 5px;
-  font-size: 1.3em;
-  text-align: center;
-}
-/* line 11, ../sass/_forget.scss */
-.btn-send-forget:link {
-  text-decoration: none;
-}
-/* line 15, ../sass/_forget.scss */
-.btn-send-forget:hover {
-  color: #5E2923;
 }
