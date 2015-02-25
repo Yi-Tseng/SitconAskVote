@@ -1,21 +1,10 @@
-# Fire.app Sample Project
+# Hacker, 給問嗎？
 
-It is a sample project for [Fire.app][fireapp].
 
-Fire.app is a **menubar only app** for fast HTML prototyping.
+關於本平台
+----
+Hacker, 給問嗎？ 是一個針對 SITCON 2015 The True Hacker 所開發的問題提問平台。
 
-## Demo
+本平台的設計靈感來自 市長，給問嗎？ ，並將許多功能精簡化後所得。
 
-[Demo on Heroku](http://fire-app-sample-project.herokuapp.com/)
-
-## How To Run On Heroku
-
-* heroku create -s cedar
-* git push heruko master
-
-## License
-
-Copyright (c) 2012 Handlino Inc.
-Licensed under GPL v2.
-
-[fireapp]: http://fireapp.handlino.com/
+本平台最主要是用在座談會上使用，讓台下的觀眾可以隨意的進行發問，所有問題皆經由各使用者投票（想聽）來決定，想聽的人越多，則越容易有機會被主持人選用。
