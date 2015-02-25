@@ -43,7 +43,7 @@ body {
         display: inline;
     }
 
-    input {
+    input[type="text"], input[type="password"] {
         background-color: transparent;
         border-style: solid;
         border-width: 0px 0px 1px 0px;
@@ -52,6 +52,26 @@ body {
         display: inline;
         width: 100%;
         font-size: 1.4em;
+    }
+    
+    input[type="submit"] {
+        width: 100%;
+        border-width: 0;
+        display: block;
+        background-color: $bright_red;
+        color: #FFF;
+        padding: 20px;
+        border-radius: 5px;
+        font-size: 1.3em;
+        text-align: center;
+
+        &:link {
+            text-decoration:none;
+        }
+
+        &:hover {
+            color: #5E2923;
+        }
     }
 
     textarea {
@@ -70,6 +90,38 @@ body {
 .error-msg {
     font-size: 1.3em;
     color: #FFF;
+}
+
+.bright-text {
+    color: $bright-red;
+}
+
+.dark-text {
+    color: $dark-red;
+}
+
+.bright-link {
+    color: $bright-red;
+    
+    &:link {
+        text-decoration: none;    
+    }
+    
+    &:hover {
+        color: $dark-red;
+    }
+}
+
+.dark-link {
+    color: $dark-red;
+    
+    &:link {
+        text-decoration: none;    
+    }
+    
+    &:hover {
+        color: $bright-red;
+    }
 }
 
 

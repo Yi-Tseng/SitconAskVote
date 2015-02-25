@@ -5,7 +5,7 @@
         {% csrf_token %}
         <div class="field">
             <h2>電子郵件(帳號)：</h2>
-            <input type="text" value="{{user.email}}" disabled/>
+            <input name="email" value="test@test.com" disabled type="text"/>
         </div>
         <div class="field">
             <h2>暱稱：</h2>
@@ -16,7 +16,7 @@
             <input name="password" type="password">
         </div>
         <div class="field">
-            <a href="#" class="btn-change-profile">修改資料</a>
+            <input name="submit" type="submit" value="修改資料"/>
         </div>
         {% if error != None %}
         <p class='error-msg'>{{error}}</p>
