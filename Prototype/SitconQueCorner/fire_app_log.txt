@@ -79,3 +79,100 @@
 2015-02-24 21:54:47 overwrite stylesheets/style.css 
 2015-02-24 21:56:09 overwrite stylesheets/style.css 
 2015-02-24 22:39:01 overwrite stylesheets/style.css 
+2015-02-25 13:26:34     error sass/style.scss (Line 46 of sass/_main.scss: Invalid CSS after "    input[type": expected "]", was "!=submit] {")
+2015-02-25 13:26:34 overwrite stylesheets/style.css 
+2015-02-25 13:27:15 overwrite stylesheets/style.css 
+2015-02-25 13:27:44     error sass/style.scss (Line 46 of sass/_main.scss: Invalid CSS after "    input[type": expected "]", was "!="submit"] {")
+2015-02-25 13:27:44 overwrite stylesheets/style.css 
+2015-02-25 13:28:52     error sass/style.scss (Line 46 of sass/_main.scss: Invalid CSS after "...ut[type="text" ": expected "]", was "|| type="passwo...")
+2015-02-25 13:28:52 overwrite stylesheets/style.css 
+2015-02-25 13:29:49 overwrite stylesheets/style.css 
+2015-02-25 13:30:16 overwrite stylesheets/style.css 
+2015-02-25 13:31:54 overwrite stylesheets/style.css 
+2015-02-25 13:32:02 overwrite stylesheets/style.css 
+2015-02-25 13:32:38 overwrite stylesheets/style.css 
+2015-02-25 13:32:57 overwrite stylesheets/style.css 
+2015-02-25 13:40:30 overwrite stylesheets/style.css 
+2015-02-25 13:41:42 overwrite stylesheets/style.css 
+2015-02-25 13:43:56 overwrite stylesheets/style.css 
+2015-02-25 13:44:04 overwrite stylesheets/style.css 
+2015-02-25 13:44:17 overwrite stylesheets/style.css 
+2015-02-25 13:49:36    Create about.html
+2015-02-25 13:49:36    Create index.html
+2015-02-25 13:49:36    Create question/ask.html
+2015-02-25 13:49:36    Create question/view.html
+2015-02-25 13:49:36    Create user/forget.html
+2015-02-25 13:49:36    Create user/login.html
+2015-02-25 13:49:36    Create user/profile.html
+2015-02-25 13:49:36    Create user/register.html
+2015-02-25 13:49:36      Copy /coffeescripts/.DS_Store
+2015-02-25 13:49:36      Copy /images/.DS_Store
+2015-02-25 13:49:36      Copy /javascripts/.DS_Store
+2015-02-25 13:49:36      Copy /sass/.DS_Store
+2015-02-25 13:49:36      Copy /user/.DS_Store
+2015-02-25 13:49:36      Copy /images/bg-grid.png
+2015-02-25 13:49:36      Copy /images/logo@2x.png
+2015-02-25 13:49:36      Copy /javascripts/jquery-1.11.2.min.js
+2015-02-25 13:49:36      Copy /javascripts/scripts.js
+2015-02-25 13:49:36      Copy /stylesheets/reset.css
+2015-02-25 13:49:36      Copy /stylesheets/style.css
+2015-02-25 13:55:01 overwrite stylesheets/style.css 
+2015-02-25 13:55:09 identical stylesheets/style.css 
+2015-02-25 13:55:19     error sass/style.scss (Line 8: File to import not found or unreadable: ask.
+Load paths:
+  /Users/takeshi/SITCON/SitconQuestionCorner/Prototype/SitconQueCorner/sass
+  /Applications/Fire.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/blueprint/stylesheets
+  /Applications/Fire.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets
+  /Applications/Fire.app/Contents/Resources/lib/ruby/compass_extensions/compass-960-plugin-0.10.4/stylesheets
+  /Applications/Fire.app/Contents/Resources/lib/ruby/compass_extensions/compass-h5bp-0.1.1/stylesheets
+  /Applications/Fire.app/Contents/Resources/lib/ruby/compass_extensions/compass-normalize-1.4.3/stylesheets
+  /Applications/Fire.app/Contents/Resources/lib/ruby/compass_extensions/bootstrap-sass-2.3.2.1/vendor/assets/stylesheets
+  /Applications/Fire.app/Contents/Resources/lib/ruby/compass_extensions/susy-1.0.9/sass
+  /Applications/Fire.app/Contents/Resources/lib/ruby/compass_extensions/zurb-foundation-4.3.1/scss
+  Compass::SpriteImporter
+  /vendor/assets/stylesheets)
+2015-02-25 13:55:19 overwrite stylesheets/style.css 
+2015-02-25 13:55:24 overwrite stylesheets/style.css 
+2015-02-25 13:55:35     error sass/style.scss (Line 13: File to import not found or unreadable: forget.
+Load paths:
+  /Users/takeshi/SITCON/SitconQuestionCorner/Prototype/SitconQueCorner/sass
+  /Applications/Fire.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/blueprint/stylesheets
+  /Applications/Fire.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets
+  /Applications/Fire.app/Contents/Resources/lib/ruby/compass_extensions/compass-960-plugin-0.10.4/stylesheets
+  /Applications/Fire.app/Contents/Resources/lib/ruby/compass_extensions/compass-h5bp-0.1.1/stylesheets
+  /Applications/Fire.app/Contents/Resources/lib/ruby/compass_extensions/compass-normalize-1.4.3/stylesheets
+  /Applications/Fire.app/Contents/Resources/lib/ruby/compass_extensions/bootstrap-sass-2.3.2.1/vendor/assets/stylesheets
+  /Applications/Fire.app/Contents/Resources/lib/ruby/compass_extensions/susy-1.0.9/sass
+  /Applications/Fire.app/Contents/Resources/lib/ruby/compass_extensions/zurb-foundation-4.3.1/scss
+  Compass::SpriteImporter
+  /vendor/assets/stylesheets)
+2015-02-25 13:55:35 overwrite stylesheets/style.css 
+2015-02-25 13:55:47     error sass/style.scss (Line 11: File to import not found or unreadable: profile.
+Load paths:
+  /Users/takeshi/SITCON/SitconQuestionCorner/Prototype/SitconQueCorner/sass
+  /Applications/Fire.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/blueprint/stylesheets
+  /Applications/Fire.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets
+  /Applications/Fire.app/Contents/Resources/lib/ruby/compass_extensions/compass-960-plugin-0.10.4/stylesheets
+  /Applications/Fire.app/Contents/Resources/lib/ruby/compass_extensions/compass-h5bp-0.1.1/stylesheets
+  /Applications/Fire.app/Contents/Resources/lib/ruby/compass_extensions/compass-normalize-1.4.3/stylesheets
+  /Applications/Fire.app/Contents/Resources/lib/ruby/compass_extensions/bootstrap-sass-2.3.2.1/vendor/assets/stylesheets
+  /Applications/Fire.app/Contents/Resources/lib/ruby/compass_extensions/susy-1.0.9/sass
+  /Applications/Fire.app/Contents/Resources/lib/ruby/compass_extensions/zurb-foundation-4.3.1/scss
+  Compass::SpriteImporter
+  /vendor/assets/stylesheets)
+2015-02-25 13:55:47 overwrite stylesheets/style.css 
+2015-02-25 13:55:58     error sass/style.scss (Line 5: File to import not found or unreadable: register.
+Load paths:
+  /Users/takeshi/SITCON/SitconQuestionCorner/Prototype/SitconQueCorner/sass
+  /Applications/Fire.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/blueprint/stylesheets
+  /Applications/Fire.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets
+  /Applications/Fire.app/Contents/Resources/lib/ruby/compass_extensions/compass-960-plugin-0.10.4/stylesheets
+  /Applications/Fire.app/Contents/Resources/lib/ruby/compass_extensions/compass-h5bp-0.1.1/stylesheets
+  /Applications/Fire.app/Contents/Resources/lib/ruby/compass_extensions/compass-normalize-1.4.3/stylesheets
+  /Applications/Fire.app/Contents/Resources/lib/ruby/compass_extensions/bootstrap-sass-2.3.2.1/vendor/assets/stylesheets
+  /Applications/Fire.app/Contents/Resources/lib/ruby/compass_extensions/susy-1.0.9/sass
+  /Applications/Fire.app/Contents/Resources/lib/ruby/compass_extensions/zurb-foundation-4.3.1/scss
+  Compass::SpriteImporter
+  /vendor/assets/stylesheets)
+2015-02-25 13:55:58 overwrite stylesheets/style.css 
+2015-02-25 13:56:11 overwrite stylesheets/style.css 

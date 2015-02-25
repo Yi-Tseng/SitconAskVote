@@ -8,7 +8,7 @@
     padding: 10px;
     color: #FFF;
     display: inline-block;
-    width: 45%;
+    width: 80%;
     min-height: 600px;
     margin: 0 10px;
     vertical-align: top;
@@ -56,6 +56,15 @@
 .question-set {
     margin: 0 auto;
     width: 90%;
+}
+
+.order-set {
+    a, p {
+        font-size: 1.3em;
+        display: inline-block;
+    }
+    
+    padding: 10px 0;
 }
 
 
