@@ -4,12 +4,13 @@ from django.contrib.auth.models import User
 from django.shortcuts import render
 from django.views.decorators.debug import sensitive_post_parameters
 from django.contrib.auth.decorators import login_required
-from users.models import ResetPasswordToken
+from users.models import ResetPasswordToken, UserRegisterToken
 from django.template.loader import get_template
 from django.template import Context
+from django.core.mail import send_mail
 from os import urandom
 from base64 import urlsafe_b64encode
-from django.core.mail import send_mail
+
 
 @sensitive_post_parameters('password')
 def register(request):
@@ -19,7 +20,20 @@ def register(request):
         return redirect('/')
 
     if request.method == 'GET':
-        return render(request, 'register.html')
+        if 'token' in request.GET:
+            try:
+                token = UserRegisterToken.objects.get(token=request.GET['token'])
+                user = token.user
+                user.is_active = True
+                user.save()
+
+            except UserRegisterToken.DoesNotExist:
+                return render(request, 'msg.html', {'message': 'Oops, 沒有這一個 Token 喔。'})
+
+            return redirect('/')
+
+        else:
+            return render(request, 'register.html')
 
     email = request.POST.get('email')
     nickname = request.POST.get('nickname')
@@ -35,7 +49,19 @@ def register(request):
         user.email = email
         user.last_name = nickname
         user.set_password(password)
+        user.is_active = False
         user.save()
+
+        token = UserRegisterToken()
+        token.user = user
+        token.token = urlsafe_b64encode(urandom(16))[:-2]
+        token.save()
+
+        template = get_template('email.html')
+        text_content = '請至 http://140.113.110.7/user/register?token=' + token.token + '完成信箱驗證。'
+        subject = '[Hacker, 給問嗎？]註冊確認信'
+        from_email = 'admin@ask.sitcon.org'
+        send_mail(subject, text_content, from_email, [user.email])
 
     else:
         context['error'] = '此 email 已註冊'
@@ -90,10 +116,9 @@ def forget(request):
             token.password = password
 
             # from staff.sitcon.org
-            token.token = urlsafe_b64encode(urandom(8))[:-1]
+            token.token = urlsafe_b64encode(urandom(16))[:-2]
             token.save()
 
-            # TODO: send password reset email!
             template = get_template('email.html')
             msg = '請至 <a href="http://140.113.110.7/user/forget?token=' + token.token + '">http://140.113.110.7/user/forget?token=' + token.token + '</a>重設密碼'
             context = Context({'message': msg})
