@@ -9,7 +9,7 @@ from django.template.loader import get_template
 from django.template import Context
 from os import urandom
 from base64 import urlsafe_b64encode
-from django.core.mail import send_mail
+from django.core.mail import send_mail, EmailMultiAlternatives
 
 @sensitive_post_parameters('password')
 def register(request):
@@ -93,15 +93,14 @@ def forget(request):
             token.token = urlsafe_b64encode(urandom(8))[:-1]
             token.save()
 
-            # TODO: send password reset email!
             template = get_template('email.html')
-            msg = '請至 <a href="http://140.113.110.7/user/forget?token=' + token.token + '">http://140.113.110.7/user/forget?token=' + token.token + '</a>重設密碼'
-            context = Context({'message': msg})
-            email_context = template.render(context)
-            send_mail('[Hacker, 給問嗎？]密碼重設信件', email_context, 'admin@ask.sitcon.org', [user.email], fail_silently=False)
+            text_content = '請至 http://140.113.110.7/user/forget?token=' + token.token + '重設密碼。'
+            subject = '[Hacker, 給問嗎？]密碼重設信件'
+            from_email = 'admin@ask.sitcon.org'
+            send_mail(subject, text_content, from_email, [user.email])
 
             return render(request, 'msg.html', {'message': '請前往信箱檢查密碼信件'})
-            
+
         except User.DoesNotExist:
             return render(request, 'forget.html', {'error': '信箱未註冊'})
 
