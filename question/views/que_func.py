@@ -39,28 +39,24 @@ def ask(request):
 
 def view_question(request):
     questions = Question.objects.all()
+    order_pop = True
+    
+    if 'order' in request.GET:
+        order_pop = (request.GET['order'] == 'popular')
 
-    # Update want count
-    # TODO: need other method to update this count
 
-    for que in questions:
-        count = WantListen.objects.filter(question=que.id).count()
-        que.want = count
-        que.save()
+    if order_pop:
+        questions.sort(key=lambda x: x.want, reverse=True)
 
-    popular = list(questions)
-    newest = list(questions)
-
-    popular.sort(key=lambda x: x.want, reverse=True)
-    newest.sort(key=lambda x: x.id, reverse=True)
+    else:
+        questions.sort(key=lambda x: x.id, reverse=True)
 
     want_list = []
-
     if request.user and request.user.is_authenticated():
         want_list = WantListen.objects.filter(user=request.user)
         want_list = [w.question.id for w in want_list]
     
-    return render(request, 'view.html', {'popular':popular, 'newest':newest, 'want_list':want_list})
+    return render(request, 'view.html', {'questions':questions, 'want_list':want_list, 'pop':order_pop})
 
 
 def want_listen(request):

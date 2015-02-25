@@ -5,58 +5,63 @@
 <div class="question-set" align="center">
 
     <div class="question-list" align="left">
-        <h1>人氣問題：</h1>
-        {% for pop in popular %}
-        <div class="item" id="pop-{{pop.id}}">
+        
+        <div class="order-set">
+            <a class="{{'bright-link' if order_pop else 'dark-link'}}" href="/question/view?order=popular">人氣問題</a>
+            <p class="dark-text">/</p>
+            <a class="{{'dark-link' if order_pop else 'bright-link'}}" href="/question/view?order=time">最新問題：</a>
+        </div>
+        {% for que in questions %}
+        <div class="item" id="que-{{que.id}}">
 
             <div class="title">
                 {% autoescape on %}
-                {{pop.title}}
+                {{que.title}}
                 {% endautoescape %}
-                {% if pop.solved %}
+                {% if que.solved %}
                 [已回答]
                 {% endif %}
-                <b>({{pop.want}}人想聽)</b>
+                <b>({{que.want}}人想聽)</b>
                 <!-- 管理用 -->
-                {% if pop.author.id == user.id %}
-                <a class="admin-btn" href="/question/edit?qid={{pop.id}}">編輯</a>
-                <a class="admin-btn" href="/question/del?qid={{pop.id}}">刪除</a>
+                {% if que.author.id == user.id %}
+                <a class="admin-btn" href="/question/edit?qid={{que.id}}">編輯</a>
+                <a class="admin-btn" href="/question/del?qid={{que.id}}">刪除</a>
                     {% if user.is_staff %}
-                    {% if not pop.solved %}
-                    <a class="admin-btn" href="/question/solve?qid={{pop.id}}">已解決</a>
+                    {% if not que.solved %}
+                    <a class="admin-btn" href="/question/solve?qid={{que.id}}">已解決</a>
                     {% else %}
-                    <a class="admin-btn" href="/question/unsolve?qid={{pop.id}}">未解決</a>
+                    <a class="admin-btn" href="/question/unsolve?qid={{que.id}}">未解決</a>
                     {% endif %}
                     {% endif %}
                 {% elif user.is_staff %}
-                <a class="admin-btn" href="/question/del?qid={{pop.id}}">刪除</a>
-                    {% if not pop.solved %}
-                    <a class="admin-btn" href="/question/solve?qid={{pop.id}}">已解決</a>
+                <a class="admin-btn" href="/question/del?qid={{que.id}}">刪除</a>
+                    {% if not que.solved %}
+                    <a class="admin-btn" href="/question/solve?qid={{que.id}}">已解決</a>
                     {% else %}
-                    <a class="admin-btn" href="/question/unsolve?qid={{pop.id}}">未解決</a>
+                    <a class="admin-btn" href="/question/unsolve?qid={{que.id}}">未解決</a>
                     {% endif %}
                 {% endif %}
                 <!-- 管理用 -->
 
-                <a class="btn-collapse" href="#ctx-pop-{{pop.id}}">►</a>
+                <a class="btn-collapse" href="#ctx-que-{{que.id}}">►</a>
             </div>
 
-            <div class="context" id="ctx-pop-{{pop.id}}">
+            <div class="context" id="ctx-que-{{que.id}}">
 
                 <p>提問者：
                     {% autoescape on %}
-                    {{pop.author.last_name}}
+                    {{que.author.last_name}}
                     {% endautoescape %}
             </p>
                 {% autoescape on %}
-                {{pop.text}}
+                {{que.text}}
                 {% endautoescape %}
 
                 {% if user.is_authenticated %}
-                    {% if pop.id in want_list %}
-                        <a id="btn-pop-{{pop.id}}" href="#" class="btn-want-this-question wanted">已列入想聽名單</a>
+                    {% if que.id in want_list %}
+                        <a id="btn-que-{{que.id}}" href="#" class="btn-want-this-question wanted">已列入想聽名單</a>
                     {% else %}
-                        <a id="btn-pop-{{pop.id}}" href="#" class="btn-want-this-question">想聽</a>
+                        <a id="btn-que-{{que.id}}" href="#" class="btn-want-this-question">想聽</a>
                     {% endif %}
                 {% endif %}
 
@@ -66,68 +71,6 @@
         {% endfor %}
     </div>
 
-    <div class="question-list" align="left">
-        <h1>最新問題：</h1>
-        {% for new_q in newest %}
-        <div class="item" id="new_q-{{new_q.id}}">
-
-            <div class="title">
-                {% autoescape on %}
-                {{new_q.title}}
-                {% endautoescape %}
-                {% if new_q.solved %}
-                [已回答]
-                {% endif %}
-                <b>({{new_q.want}}人想聽)</b>
-                <!-- 管理用 -->
-                {% if new_q.author.id == user.id %}
-                <a class="admin-btn" href="/question/edit?qid={{new_q.id}}">編輯</a>
-                <a class="admin-btn" href="/question/del?qid={{new_q.id}}">刪除</a>
-                    {% if user.is_staff %}
-                    {% if not new_q.solved %}
-                    <a class="admin-btn" href="/question/solve?qid={{new_q.id}}">已解決</a>
-                    {% else %}
-                    <a class="admin-btn" href="/question/unsolve?qid={{new_q.id}}">未解決</a>
-                    {% endif %}
-
-                    {% endif %}
-                {% elif user.is_staff %}
-                <a class="admin-btn" href="/question/del?qid={{new_q.id}}">刪除</a>
-                    {% if not new_q.solved %}
-                    <a class="admin-btn" href="/question/solve?qid={{new_q.id}}">已解決</a>
-                    {% else %}
-                    <a class="admin-btn" href="/question/unsolve?qid={{new_q.id}}">未解決</a>
-                    {% endif %}
-                {% endif %}
-                <!-- 管理用 -->
-
-                <a class="btn-collapse" href="#ctx-new_q-{{new_q.id}}">►</a>
-            </div>
-
-            <div class="context" id="ctx-new_q-{{new_q.id}}">
-
-                <p>提問者：
-                    {% autoescape on %}
-                    {{new_q.author.last_name}}
-                    {% endautoescape %}
-                </p>
-                {% autoescape on %}
-                {{new_q.text}}
-                {% endautoescape %}
-
-                {% if user.is_authenticated %}
-                    {% if new_q.id in want_list %}
-                        <a id="btn-new_q-{{new_q.id}}" href="#" class="btn-want-this-question wanted">已列入想聽名單</a>
-                    {% else %}
-                        <a id="btn-new_q-{{new_q.id}}" href="#" class="btn-want-this-question">想聽</a>
-                    {% endif %}
-                {% endif %}
-
-            </div>
-
-        </div>
-        {% endfor %}
-    </div>
 </div>
 <script src="{% static 'javascripts/que_view.js' %}"></script>
 {% if user.is_authenticated %}
