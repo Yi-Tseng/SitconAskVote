@@ -1,15 +1,15 @@
  # -*- coding: utf-8 -*-
 
-from django.contrib.auth.models import User, Group
+from django.contrib.auth.models import User
 from django.shortcuts import render
 from django.views.decorators.debug import sensitive_post_parameters
-from django.contrib.auth.models import User
-from django.core.validators import validate_email
-from django.core.exceptions import ValidationError
 from django.contrib.auth.decorators import login_required
 from users.models import ResetPasswordToken
+from django.template.loader import get_template
+from django.template import Context
 from os import urandom
 from base64 import urlsafe_b64encode
+from django.core.mail import send_mail
 
 @sensitive_post_parameters('password')
 def register(request):
@@ -94,6 +94,12 @@ def forget(request):
             token.save()
 
             # TODO: send password reset email!
+            template = get_template('email.html')
+            msg = '請至 <a href="http://140.113.110.7/user/forget?token=' + token.token + '">http://140.113.110.7/user/forget?token=' + token.token + '</a>重設密碼'
+            context = Context({'message': msg})
+            email_context = template.render(context)
+            send_mail('[Hacker, 給問嗎？]密碼重設信件', email_context, 'admin@ask.sitcon.org', [user.email], fail_silently=False)
+
             return render(request, 'msg.html', {'message': '請前往信箱檢查密碼信件'})
             
         except User.DoesNotExist:
