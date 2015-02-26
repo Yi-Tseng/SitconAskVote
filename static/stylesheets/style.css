@@ -98,59 +98,64 @@ body {
 }
 
 /* line 97, ../sass/_main.scss */
+.white-text {
+  color: #FFF;
+}
+
+/* line 101, ../sass/_main.scss */
 .bright-text {
   color: #ba5347;
 }
 
-/* line 101, ../sass/_main.scss */
+/* line 105, ../sass/_main.scss */
 .dark-text {
   color: #5e2923;
 }
 
-/* line 105, ../sass/_main.scss */
+/* line 109, ../sass/_main.scss */
 .bright-link {
   color: #ba5347;
 }
-/* line 108, ../sass/_main.scss */
+/* line 112, ../sass/_main.scss */
 .bright-link:link {
   text-decoration: none;
 }
-/* line 112, ../sass/_main.scss */
+/* line 116, ../sass/_main.scss */
 .bright-link:hover {
   color: #5e2923;
 }
 
-/* line 117, ../sass/_main.scss */
+/* line 121, ../sass/_main.scss */
 .dark-link {
   color: #5e2923;
 }
-/* line 120, ../sass/_main.scss */
+/* line 124, ../sass/_main.scss */
 .dark-link:link {
   text-decoration: none;
 }
-/* line 124, ../sass/_main.scss */
+/* line 128, ../sass/_main.scss */
 .dark-link:hover {
   color: #ba5347;
 }
 
 @media (max-width: 810px) {
-  /* line 131, ../sass/_main.scss */
+  /* line 135, ../sass/_main.scss */
   .frame {
     width: 80%;
   }
 
-  /* line 135, ../sass/_main.scss */
+  /* line 139, ../sass/_main.scss */
   .container {
     padding: 0 20px;
   }
 }
 @media (max-width: 500px) {
-  /* line 141, ../sass/_main.scss */
+  /* line 145, ../sass/_main.scss */
   .frame {
     width: 100%;
   }
 
-  /* line 145, ../sass/_main.scss */
+  /* line 149, ../sass/_main.scss */
   .container {
     padding: 0 10px;
   }
