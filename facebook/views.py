@@ -27,20 +27,30 @@ def login(request):
         return render(request, 'login.html', {'error': 'FB 帳號未驗證'})
 
     try:
-        user = auth.authenticate(username=email, password=access_token[:32])
-        auth.login(request, user)
+        user = User.objects.get(username=email)
+        password = access_token
+        user.set_password(password)
+        user.save()
+        user = auth.authenticate(username=email, password=password)
+
+        if user.is_active:
+            auth.login(request, user)
 
     except User.DoesNotExist:
+        print 'email not found, add new user'
         user = User()
         user.username = email
         user.email = email
         user.last_name = name
-        password = access_token[:32]
+        password = urlsafe_b64encode(urandom(16))[:-2]
         user.set_password(password)
         user.is_active = True
         user.save()
-        auth.login(request, user)
-        print 'login to user', user.username
+        user = auth.authenticate(username=email, password=password)
+
+        print user
+        if user.is_active:
+            auth.login(request, user)
 
     return redirect('/')
 

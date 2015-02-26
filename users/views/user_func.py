@@ -1,7 +1,7 @@
  # -*- coding: utf-8 -*-
 
 from django.contrib.auth.models import User
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.decorators.debug import sensitive_post_parameters
 from django.contrib.auth.decorators import login_required
 from users.models import ResetPasswordToken, UserRegisterToken
