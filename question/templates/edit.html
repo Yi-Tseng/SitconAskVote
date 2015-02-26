@@ -6,14 +6,14 @@
         <input name="qid" type="hidden" value="{{question.id}}">
         <div class="field">
             <h2>提問標題(64字以內)：</h2>
-            <input name="title" value="{{question.title}}" />
+            <input type="text" name="title" value="{{question.title}}" />
         </div>
         <div class="field">
             <h2>提問內容(256字以內)：</h2>
             <textarea name="context" value="{{question.text}}">{{question.text}}</textarea>
         </div>
         <div class="field" align="center">
-            <a href="#" class="btn-ask">編輯問題</a>
+            <input type="submit" value="送出修改" />
         </div>
         {% if error != None %}
         <p class='error-msg'>{{error}}</p>
