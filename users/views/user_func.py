@@ -56,7 +56,7 @@ def register(request):
         token.save()
 
         template = get_template('email.html')
-        text_content = '請至 http://140.113.110.7/user/register?token=' + token.token + '完成信箱驗證。'
+        text_content = '請至 http://ask.sitcon.org/user/register?token=' + token.token + ' 完成信箱驗證。'
         subject = '[Hacker, 給問嗎？]註冊確認信'
         from_email = 'admin@ask.sitcon.org'
         send_mail(subject, text_content, from_email, [user.email])
@@ -118,7 +118,7 @@ def forget(request):
             token.save()
 
             template = get_template('email.html')
-            text_content = '請至 http://140.113.110.7/user/forget?token=' + token.token + '重設密碼。'
+            text_content = '請至 http://ask.sitcon.org/user/forget?token=' + token.token + ' 重設密碼。'
             subject = '[Hacker, 給問嗎？]密碼重設信件'
             from_email = 'admin@ask.sitcon.org'
             send_mail(subject, text_content, from_email, [user.email])
