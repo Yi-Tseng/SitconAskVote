@@ -32,7 +32,7 @@ body {
 
 /* line 32, ../sass/_main.scss */
 .field {
-  margin: 10px 0;
+  margin: 15px 0;
 }
 /* line 35, ../sass/_main.scss */
 .field p {
@@ -447,7 +447,6 @@ footer {
 }
 /* line 39, ../sass/_question.scss */
 .question-list .item .context {
-  display: none;
   padding: 7px;
 }
 /* line 43, ../sass/_question.scss */
