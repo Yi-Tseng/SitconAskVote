@@ -8,14 +8,12 @@
         <div class="order-set">
             {% if pop %}
             <a class="bright-link" href="/question/view?order=popular">人氣問題</a>
-            {% else %}
-            <a class="bright-link" href="/question/view?order=time">最新問題</a>
-            {% endif %}
             <p class="dark-text">/</p>
-            {% if not pop %}
-            <a class="dark-link" href="/question/view?order=popular">人氣問題：</a>
-            {% else %}
             <a class="dark-link" href="/question/view?order=time">最新問題：</a>
+            {% else %}
+            <a class="dark-link" href="/question/view?order=popular">人氣問題</a>
+            <p class="dark-text">/</p>
+            <a class="bright-link" href="/question/view?order=time">最新問題：</a>
             {% endif %}
         </div>
         {% for que in questions %}
