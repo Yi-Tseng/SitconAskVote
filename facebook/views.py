@@ -9,7 +9,6 @@ from base64 import urlsafe_b64encode
 # Create your views here.
 def login(request):
 
-    response_data = {}
 
     if 'token' not in request.GET:
         redirect('/user/login')
@@ -28,18 +27,15 @@ def login(request):
         return render(request, 'login.html', {'error': 'FB 帳號未驗證'})
 
     try:
-        # user = User.objects.get(email=email)
-        user = auth.authenticate(username=email)
-        if user.is_active:
-            auth.login(request, user)
-        print 'login to user', user.username
+        user = auth.authenticate(username=email, password=access_token[:32])
+        auth.login(request, user)
 
     except User.DoesNotExist:
         user = User()
         user.username = email
         user.email = email
         user.last_name = name
-        password = urlsafe_b64encode(urandom(32))[:-2]
+        password = access_token[:32]
         user.set_password(password)
         user.is_active = True
         user.save()
