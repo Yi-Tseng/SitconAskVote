@@ -48,7 +48,7 @@ $(".btn-facebook-login").click(function(e) {
                 console.log(resp.authResponse.accessToken);
             }
         });
-    });
+    }, {scope: 'public_profile,email'});
 });
 </script>
 {% endblock %}
