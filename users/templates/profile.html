@@ -5,7 +5,7 @@
         {% csrf_token %}
         <div class="field">
             <h2>電子郵件(帳號)：</h2>
-            <input name="email" value="test@test.com" disabled type="text"/>
+            <input name="email" value="{{user.email}}" disabled type="text"/>
         </div>
         <div class="field">
             <h2>暱稱：</h2>
