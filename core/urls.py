@@ -5,4 +5,6 @@ urlpatterns = patterns('',
     url(r'^about$', 'core.views.about'),
     url(r'^user/', include('users.urls')),
     url(r'^question/', include('question.urls')),
+    # facebook
+    url(r'^facebook/', include('facebook.urls')),
 )
