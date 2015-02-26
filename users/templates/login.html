@@ -15,11 +15,40 @@
             <input name="submit" type="submit" value="登入"/>
         </div>
         <div class="field">
-            <a href="http://www.facebook.com/dialog/oauth?client_id=1562173184059723&redirect_uri=http://ask.sitcon.org/facebook/login&scope=" class="btn-facebook-login"> 使用 Facebook 登入 </a>
+            <a href="#" class="btn-facebook-login"> 使用 Facebook 登入 </a>
         </div>
         {% if error != None %}
         <p class='error-msg'>{{error}}</p>
         {% endif %}
     </form>
 </div>
+{% endblock %}
+{% block js_block %}
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '1562173184059723',
+            xfbml      : true,
+            version    : 'v2.1'
+        });
+    };
+
+(function(d, s, id){
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {return;}
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+$(".btn-facebook-login").click(function(e) {
+    FB.login(function(r) {
+        FB.getLoginStatus(function(resp) {
+            if(resp.status === 'connected') {
+                console.log(resp.authResponse.accessToken);
+            }
+        });
+    });
+});
+</script>
 {% endblock %}
