@@ -1,24 +1,18 @@
 from django.shortcuts import redirect
 from facepy import GraphAPI
-from core.private_data import fb_config
-from urlparse import parse_qs
-import requests
-import urllib
+import json
 
 # Create your views here.
 def login(request):
 
-    if 'code' not in request.GET:
-        return redirect('/user/login')
+    response_data = {}
 
-    code = request.GET['code']
+    if 'token' not in request.GET:
+        redirect('/user/login')
 
-    args = dict(client_id=fb_config['app_id'], redirect_uri="http://ask.sitcon.org/user/login/")
-    args["client_secret"] = fb_config['secret']
-    args["code"] = code
-    token_url = "https://graph.facebook.com/oauth/access_token?"+urllib.urlencode(args)
+    access_token = request.GET['token']
+    graph = GraphAPI(access_token)
 
-    r = requests.get(token_url)
-    print r.text
+    print graph.get('me')
 
-    return redirect('/user/login')
+    return redirect('/')
