@@ -55,8 +55,9 @@ body {
   display: inline;
   width: 100%;
   font-size: 1.4em;
+  margin: 5px 0;
 }
-/* line 57, ../sass/_main.scss */
+/* line 58, ../sass/_main.scss */
 .field input[type="submit"] {
   width: 100%;
   border-width: 0;
@@ -68,17 +69,17 @@ body {
   font-size: 1.3em;
   text-align: center;
 }
-/* line 68, ../sass/_main.scss */
+/* line 69, ../sass/_main.scss */
 .field input[type="submit"]:link {
   text-decoration: none;
 }
-/* line 72, ../sass/_main.scss */
+/* line 73, ../sass/_main.scss */
 .field input[type="submit"]:hover {
   color: #5E2923;
 }
-/* line 77, ../sass/_main.scss */
+/* line 78, ../sass/_main.scss */
 .field textarea {
-  width: 95%;
+  width: 99%;
   min-height: 400px;
   background-color: #5E2923;
   color: #FFF;
@@ -87,68 +88,69 @@ body {
   border-color: #ba5347;
   font-size: 1.4em;
   padding: 3px;
+  margin: 5px 0;
 }
 
-/* line 90, ../sass/_main.scss */
+/* line 92, ../sass/_main.scss */
 .error-msg {
   font-size: 1.3em;
   color: #FFF;
 }
 
-/* line 95, ../sass/_main.scss */
+/* line 97, ../sass/_main.scss */
 .bright-text {
   color: #ba5347;
 }
 
-/* line 99, ../sass/_main.scss */
+/* line 101, ../sass/_main.scss */
 .dark-text {
   color: #5e2923;
 }
 
-/* line 103, ../sass/_main.scss */
+/* line 105, ../sass/_main.scss */
 .bright-link {
   color: #ba5347;
 }
-/* line 106, ../sass/_main.scss */
+/* line 108, ../sass/_main.scss */
 .bright-link:link {
   text-decoration: none;
 }
-/* line 110, ../sass/_main.scss */
+/* line 112, ../sass/_main.scss */
 .bright-link:hover {
   color: #5e2923;
 }
 
-/* line 115, ../sass/_main.scss */
+/* line 117, ../sass/_main.scss */
 .dark-link {
   color: #5e2923;
 }
-/* line 118, ../sass/_main.scss */
+/* line 120, ../sass/_main.scss */
 .dark-link:link {
   text-decoration: none;
 }
-/* line 122, ../sass/_main.scss */
+/* line 124, ../sass/_main.scss */
 .dark-link:hover {
   color: #ba5347;
 }
 
 @media (max-width: 810px) {
-  /* line 129, ../sass/_main.scss */
+  /* line 131, ../sass/_main.scss */
   .frame {
     width: 80%;
   }
 
-  /* line 133, ../sass/_main.scss */
+  /* line 135, ../sass/_main.scss */
   .container {
     padding: 0 20px;
   }
 }
 @media (max-width: 500px) {
-  /* line 139, ../sass/_main.scss */
+  /* line 141, ../sass/_main.scss */
   .frame {
     width: 100%;
   }
 
-  /* line 143, ../sass/_main.scss */
+  /* line 145, ../sass/_main.scss */
   .container {
     padding: 0 10px;
   }
