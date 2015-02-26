@@ -40,7 +40,7 @@ def register(request):
 
     user = User()
 
-    if not email or lem(email) == 0:
+    if not email or len(email) == 0:
         context['error'] = '請輸入 email'
     if User.objects.filter(email=email).count() < 1:
         user.username = email
