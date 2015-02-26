@@ -23,7 +23,7 @@ PROJECT_PATH = '/'.join(os.path.dirname(os.path.abspath(__file__)).split('/')[0:
 SECRET_KEY = '@5mq$a@1@=(n^h&3$@eij4(_^hjwwmh&pvn_w#1wm!lpvb51e9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 TEMPLATE_DEBUG = DEBUG
 
