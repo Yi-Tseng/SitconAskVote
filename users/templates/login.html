@@ -45,7 +45,7 @@ $(".btn-facebook-login").click(function(e) {
     FB.login(function(r) {
         FB.getLoginStatus(function(resp) {
             if(resp.status === 'connected') {
-                console.log(resp.authResponse.accessToken);
+                location.href = '/facebook/login?token=' + resp.authResponse.accessToken
             }
         });
     }, {scope: 'public_profile,email'});

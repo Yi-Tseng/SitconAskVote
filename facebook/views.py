@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.shortcuts import redirect, render
 from django.contrib.auth.models import User
 import django.contrib.auth as auth
@@ -21,12 +22,17 @@ def login(request):
     verified = info['verified']
     email = info['email']
 
+    print '[FB info]:', name, verified, email
+
     if not verified:
         return render(request, 'login.html', {'error': 'FB 帳號未驗證'})
 
     try:
-        user = User.objects.get(email=email)
-        auth.login(request, user)
+        # user = User.objects.get(email=email)
+        user = auth.authenticate(username=email)
+        if user.is_active:
+            auth.login(request, user)
+        print 'login to user', user.username
 
     except User.DoesNotExist:
         user = User()
@@ -38,6 +44,7 @@ def login(request):
         user.is_active = True
         user.save()
         auth.login(request, user)
+        print 'login to user', user.username
 
     return redirect('/')
 
