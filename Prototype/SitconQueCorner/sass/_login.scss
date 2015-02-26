@@ -11,3 +11,22 @@
         color: #FFF;
     }
 }
+
+.btn-facebook-login {
+    border-width: 0;
+    display: block;
+    background-color: #415E9B;
+    color: #FFF;
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 1.3em;
+    text-align: center;
+
+    &:link {
+        text-decoration:none;
+    }
+
+    &:hover {
+        color: #314E8B;
+    }
+}

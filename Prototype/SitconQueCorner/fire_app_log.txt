@@ -176,3 +176,7 @@ Load paths:
   /vendor/assets/stylesheets)
 2015-02-25 13:55:58 overwrite stylesheets/style.css 
 2015-02-25 13:56:11 overwrite stylesheets/style.css 
+2015-02-26 21:29:32 overwrite stylesheets/style.css 
+2015-02-26 21:31:40 overwrite stylesheets/style.css 
+2015-02-26 21:32:52 overwrite stylesheets/style.css 
+2015-02-26 21:33:38 overwrite stylesheets/style.css 
