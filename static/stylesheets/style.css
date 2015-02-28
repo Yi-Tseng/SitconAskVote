@@ -80,7 +80,6 @@ body {
 /* line 78, ../sass/_main.scss */
 .field textarea {
   width: 99%;
-  min-height: 400px;
   background-color: #5E2923;
   color: #FFF;
   border-style: solid;
@@ -91,71 +90,71 @@ body {
   margin: 5px 0;
 }
 
-/* line 92, ../sass/_main.scss */
+/* line 91, ../sass/_main.scss */
 .error-msg {
   font-size: 1.3em;
   color: #FFF;
 }
 
-/* line 97, ../sass/_main.scss */
+/* line 96, ../sass/_main.scss */
 .white-text {
   color: #FFF;
 }
 
-/* line 101, ../sass/_main.scss */
+/* line 100, ../sass/_main.scss */
 .bright-text {
   color: #ba5347;
 }
 
-/* line 105, ../sass/_main.scss */
+/* line 104, ../sass/_main.scss */
 .dark-text {
   color: #5e2923;
 }
 
-/* line 109, ../sass/_main.scss */
+/* line 108, ../sass/_main.scss */
 .bright-link {
   color: #ba5347;
 }
-/* line 112, ../sass/_main.scss */
+/* line 111, ../sass/_main.scss */
 .bright-link:link {
   text-decoration: none;
 }
-/* line 116, ../sass/_main.scss */
+/* line 115, ../sass/_main.scss */
 .bright-link:hover {
   color: #5e2923;
 }
 
-/* line 121, ../sass/_main.scss */
+/* line 120, ../sass/_main.scss */
 .dark-link {
   color: #5e2923;
 }
-/* line 124, ../sass/_main.scss */
+/* line 123, ../sass/_main.scss */
 .dark-link:link {
   text-decoration: none;
 }
-/* line 128, ../sass/_main.scss */
+/* line 127, ../sass/_main.scss */
 .dark-link:hover {
   color: #ba5347;
 }
 
 @media (max-width: 810px) {
-  /* line 135, ../sass/_main.scss */
+  /* line 134, ../sass/_main.scss */
   .frame {
     width: 80%;
   }
 
-  /* line 139, ../sass/_main.scss */
+  /* line 138, ../sass/_main.scss */
   .container {
     padding: 0 20px;
   }
 }
 @media (max-width: 500px) {
-  /* line 145, ../sass/_main.scss */
+  /* line 144, ../sass/_main.scss */
   .frame {
     width: 100%;
   }
 
-  /* line 149, ../sass/_main.scss */
+  /* line 148, ../sass/_main.scss */
   .container {
     padding: 0 10px;
   }
