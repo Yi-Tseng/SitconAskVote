@@ -20,13 +20,14 @@
         <div class="item" id="que-{{que.id}}">
 
             <div class="title">
+                <b>({{que.want}}人想聽)</b>
                 {% autoescape on %}
                 {{que.title}}
                 {% endautoescape %}
                 {% if que.solved %}
                 [已回答]
                 {% endif %}
-                <b>({{que.want}}人想聽)</b>
+                
                 <!-- 管理用 -->
                 {% if que.author.id == user.id %}
                 <a class="admin-btn" href="/question/edit?qid={{que.id}}">編輯</a>
