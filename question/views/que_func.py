@@ -231,3 +231,7 @@ def unsolve(request):
         return render(request, 'msg.html', context)
 
     return redirect('/question/view')
+
+def live_view(request):
+    render(request, 'live.html')
+
