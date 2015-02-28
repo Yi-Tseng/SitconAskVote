@@ -233,5 +233,5 @@ def unsolve(request):
     return redirect('/question/view')
 
 def live_view(request):
-    render(request, 'live.html')
+    return render(request, 'live.html')
 
