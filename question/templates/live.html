@@ -1,0 +1,24 @@
+
+<div align="center">
+    <div class="live-view" align="left">
+        <div class="item" id="pop-01">
+
+            <div class="title">
+                標題
+            </div>
+
+            <div class="context">
+                <p>提問者：</p>
+                <pre>
+問題內容
+                </pre>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% block js_block %}
+{% load socketio_tags %}
+{% socketio %}
+{% endblock %}
