@@ -21,3 +21,13 @@
     </form>
 </div>
 {% endblock %}
+
+{% block js_block %}
+<script type="text/javascript">
+window.onbeforeunload = function(){
+    if (!confirm('要取消編輯嗎？')) {
+        return '按一下「取消」停留在此頁';
+    }
+};
+</script>
+{% endblock %}
