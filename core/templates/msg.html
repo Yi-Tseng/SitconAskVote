@@ -3,6 +3,16 @@
 <div class="frame">
     <div class="msg">
         <h1>{{message}}</h1>
+        {% if auto_jump_location != None %}
+            <p>提示：3 秒鐘後自動跳轉</p>
+        {% endif %}
     </div>
+    {% if auto_jump_location != None %}
+        <script type="text/javascript">
+        setTimeout(function() {
+            window.location='{{auto_jump_location}}';
+        }, 3000);
+        </script>
+    {% endif %}
 </div>
 {% endblock %}
