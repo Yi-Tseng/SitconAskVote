@@ -49,7 +49,7 @@ def view_question(request):
     questions = Question.objects.all()
     questions = list(questions)
     order_pop = True
-    
+
     if 'order' in request.GET:
         order_pop = (request.GET['order'] == 'popular')
 
@@ -63,7 +63,7 @@ def view_question(request):
     if request.user and request.user.is_authenticated():
         want_list = WantListen.objects.filter(user=request.user)
         want_list = [w.question.id for w in want_list]
-    
+
     return render(request, 'view.html', {'questions':questions, 'want_list':want_list, 'pop':order_pop})
 
 
