@@ -16,26 +16,34 @@ def ask(request):
 
     # create question
     title = request.POST['title']
-    context = request.POST['context']
+    text = request.POST['context']
     author = request.user
 
-    if len(title) == 0 or len(title) > 64:
+    if len(title) == 0:
+        error = '標題不可以為空白'
+    if len(title) > 64:
         error = '標題長度有誤'
 
-    if len(context) == 0 or len(context) > 64:
+    if len(text) == 0:
+        error = '內容不可以為空白'
+    if len(text) > 64:
         error = '內容長度有誤'
 
     if not error:
         new_que = Question()
         new_que.title = title
-        new_que.text = context
+        new_que.text = text
         new_que.author = author
         new_que.save()
 
         return redirect('/question/view')
 
     else:
-        return render(request, 'ask.html', {'error':error})
+        context = {}
+        context['error'] = error
+        context['title'] = title
+        context['text'] = text
+        return render(request, 'ask.html', context)
 
 def view_question(request):
     questions = Question.objects.all()
@@ -44,7 +52,6 @@ def view_question(request):
     
     if 'order' in request.GET:
         order_pop = (request.GET['order'] == 'popular')
-
 
     if order_pop:
         questions.sort(key=lambda x: x.want, reverse=True)
@@ -72,6 +79,7 @@ def want_listen(request):
         return HttpResponse(json.dumps(response_data), content_type="application/json")
 
     if 'user_want' in request.GET:
+
         if request.user.is_authenticated():
             want_list = WantListen.objects.filter(user=request.user)
             response_data = [w.question.id for w in want_list]
@@ -80,6 +88,7 @@ def want_listen(request):
 
     if request.user and request.user.is_authenticated():
         que = None
+
         try:
             que = Question.objects.get(id=request.GET['qid'])
             want = WantListen.objects.get(user=request.user, question=que)
@@ -89,6 +98,7 @@ def want_listen(request):
 
         except WantListen.DoesNotExist, e:
             want = WantListen()
+
             if que != None:
                 want.question = que
                 want.user = request.user
@@ -103,43 +113,65 @@ def want_listen(request):
 
 @login_required
 def edit(request):
+    context = {}
 
     if request.method == 'GET':
 
         if 'qid' not in request.GET:
-            return render(request, 'msg.html', {'message':'Oops, 好像有東西出錯了，請再試一次'})
+            context['message'] = 'Oops, 好像有東西出錯了，請再試一次'
+            context['auto_jump_location'] = '/question/view'
+            return render(request, 'msg.html', context)
 
         qid = request.GET['qid']
 
         try:
             question = Question.objects.get(id=qid)
 
-            return render(request, 'edit.html', {'question':question})
+            if question.user.id != request.user.id:
+                context['message'] = '請左轉 HITCON，謝謝'
+                context['auto_jump_location'] = 'http://hitcon.org/'
+                return render(request, 'msg.html', context)
+
+            context['question'] = question
+            return render(request, 'edit.html', context)
 
         except Exception, e:
-            return render(request, 'msg.html', {'message':'Oops, 好像有東西出錯了，請再試一次'})
+            context['message'] = 'Oops, 好像有東西出錯了，請再試一次'
+            return render(request, 'msg.html', context)
 
     qid = request.POST['qid']
     title = request.POST['title']
     context = request.POST['context']
 
     if len(title) == 0 or len(context) == 0:
-        return render(request, 'edit.html', {'error':'標題或內容長度不得為零，請再試一次'})
+        context['error'] = '標題或內容長度不得為零，請再試一次'
 
     try:
         question = Question.objects.get(id=qid)
-        question.title = title
-        question.text = context
-        question.save()
 
-        return redirect('/question/view')
+        if question.user.id != request.user.id:
+            context['message'] = '請左轉 HITCON，謝謝'
+            context['auto_jump_location'] = 'http://hitcon.org/'
+            return render(request, 'msg.html', context)
+
+        context['question'] = question
+
+        if 'error' not in context:
+            question.title = title
+            question.text = context
+            question.save()
+            context['error'] = '問題儲存完成'
+
+        return render(request, 'edit.html', context)
 
     except:
-        return render(request, 'msg.html', {'message':'Oops, 好像有東西出錯了，請再試一次'})
+        context['message'] = 'Oops, 好像有東西出錯了，請再試一次'
+        return render(request, 'msg.html', context)
 
 
 @login_required
 def delete(request):
+    context = {}
 
     try:
         que = Question.objects.get(id=request.GET['qid'])
@@ -152,13 +184,21 @@ def delete(request):
 
             que.delete()
 
+        else:
+            context['message'] = '請左轉 HITCON，謝謝'
+            context['auto_jump_location'] = 'http://hitcon.org/'
+            return render(request, 'msg.html', context)
+
     except:
-        pass
+        context['message'] = 'Oops, 好像有東西出錯了，請再試一次'
+        context['auto_jump_location'] = '/question/view'
+        return render(request, 'msg.html', context)
 
     return redirect('/question/view')
 
 @login_required
 def solve(request):
+    context = {}
 
     try:
         que = Question.objects.get(id=request.GET['qid'])
@@ -168,12 +208,15 @@ def solve(request):
             que.save()
 
     except:
-        pass
+        context['message'] = 'Oops, 好像有東西出錯了，請再試一次'
+        context['auto_jump_location'] = '/question/view'
+        return render(request, 'msg.html', context)
 
     return redirect('/question/view')
 
 @login_required
 def unsolve(request):
+    context = {}
 
     try:
         que = Question.objects.get(id=request.GET['qid'])
@@ -183,6 +226,8 @@ def unsolve(request):
             que.save()
 
     except:
-        pass
+        context['message'] = 'Oops, 好像有東西出錯了，請再試一次'
+        context['auto_jump_location'] = '/question/view'
+        return render(request, 'msg.html', context)
 
     return redirect('/question/view')

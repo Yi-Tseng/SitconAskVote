@@ -64,7 +64,7 @@
 
                 {% if user.is_authenticated %}
                     {% if que.id in want_list %}
-                        <a id="btn-que-{{que.id}}" href="#" class="btn-want-this-question wanted">已列入想聽名單</a>
+                        <a id="btn-que-{{que.id}}" href="#" class="btn-want-this-question wanted">不想聽</a>
                     {% else %}
                         <a id="btn-que-{{que.id}}" href="#" class="btn-want-this-question">想聽</a>
                     {% endif %}
