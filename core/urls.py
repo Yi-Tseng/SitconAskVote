@@ -7,4 +7,6 @@ urlpatterns = patterns('',
     url(r'^question/', include('question.urls')),
     # facebook
     url(r'^facebook/', include('facebook.urls')),
+    #socket io
+    url("", include('django_socketio.urls')),
 )
