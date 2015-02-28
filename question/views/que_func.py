@@ -149,7 +149,7 @@ def edit(request):
     try:
         question = Question.objects.get(id=qid)
 
-        if question.user.id != request.user.id:
+        if question.author.id != request.user.id:
             context['message'] = '請左轉 HITCON，謝謝'
             context['auto_jump_location'] = 'http://hitcon.org/'
             return render(request, 'msg.html', context)
