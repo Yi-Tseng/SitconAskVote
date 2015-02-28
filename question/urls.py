@@ -8,5 +8,5 @@ urlpatterns = patterns('',
     url(r'^del$', views.delete),
     url(r'^solve$', views.solve),
     url(r'^unsolve$', views.unsolve),
-    url(r'^live$', views.live),
+    url(r'^live$', views.live_view),
 )
