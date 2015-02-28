@@ -6,7 +6,6 @@ from django.views.decorators.debug import sensitive_post_parameters
 from django.contrib.auth.decorators import login_required
 from users.models import ResetPasswordToken, UserRegisterToken
 from django.template.loader import get_template
-from django.template import Context
 from django.core.mail import send_mail
 from os import urandom
 from base64 import urlsafe_b64encode
@@ -69,8 +68,8 @@ def register(request):
         return render(request, 'register.html', context)
 
     else:
-        # TODO: send check email
         context['message'] = '註冊確認信已寄至您的信箱'
+        context['auto_jump_location'] = '/'
         return render(request, 'msg.html', context)
 
 @login_required
@@ -98,11 +97,12 @@ def profile(request):
     return render(request, 'profile.html', {'error': error})
 
 def forget(request):
-
+    context = {}
     if request.method == 'POST':
 
         if 'email' not in request.POST or 'password' not in request.POST:
-            return render(request, 'forget.html', {'error': '請輸入信箱及新密碼'})
+            context['error'] = '請輸入信箱及新密碼'
+            return render(request, 'forget.html', context)
 
         email = request.POST['email']
         password = request.POST['password']
@@ -123,10 +123,13 @@ def forget(request):
             from_email = 'admin@ask.sitcon.org'
             send_mail(subject, text_content, from_email, [user.email])
 
-            return render(request, 'msg.html', {'message': '請前往信箱檢查密碼信件'})
+            context['auto_jump_location'] = '/'
+            context['message'] = '請前往信箱檢查密碼信件'
+            return render(request, 'msg.html', context)
 
         except User.DoesNotExist:
-            return render(request, 'forget.html', {'error': '信箱未註冊'})
+            context['error'] = '信箱未註冊'
+            return render(request, 'forget.html', context)
 
     if 'token' not in request.GET:
         return render(request, 'forget.html')
