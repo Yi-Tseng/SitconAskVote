@@ -1,0 +1,55 @@
+.live-view {
+
+    border-style: solid;
+    border-color: #ccc;
+    border-width: 1px;
+    padding: 10px;
+    color: #FFF;
+    display: inline-block;
+    width: 80%;
+    margin: 10px 0px;
+    vertical-align: top;
+    
+    h1 {
+        font-size: 1.4em;
+        margin: 10px 0;
+    }
+
+    .item {
+        border-style: solid;
+        border-color: #ccc;
+        border-width: 1px;
+
+        .title {
+            font-size: 2em;
+            background-color: $bright_red;
+            padding: 7px;
+
+            .btn-collapse {
+                float: right;
+                color: #FFF;
+                &:link {
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .context {
+            padding: 7px;
+            
+            pre {
+                font-size: 2em;
+            }
+            
+            p {
+                font-size: 2em;
+                margin: 5px 0;
+            }
+        }
+
+        .close {
+            display: none;
+        }
+
+    }
+}

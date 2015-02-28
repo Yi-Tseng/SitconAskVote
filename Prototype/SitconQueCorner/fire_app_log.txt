@@ -189,3 +189,47 @@ Load paths:
 2015-02-27 01:41:29 overwrite stylesheets/style.css 
 2015-02-27 01:52:42 overwrite stylesheets/style.css 
 2015-02-28 16:23:47 overwrite stylesheets/style.css 
+2015-02-28 17:24:44     error sass/style.scss (Line 44 of sass/_question.scss: Invalid CSS after "...          1.7em": expected "{", was ";")
+2015-02-28 17:24:44 overwrite stylesheets/style.css 
+2015-02-28 17:25:26 overwrite stylesheets/style.css 
+2015-02-28 17:28:55 identical stylesheets/style.css 
+2015-02-28 17:34:56     error sass/style.scss (Line 1 of sass/_live.scss: Invalid CSS after "": expected selector or at-rule, was "<div class="que...")
+2015-02-28 17:34:56 overwrite stylesheets/style.css 
+2015-02-28 17:38:24     error sass/style.scss (Line 11: File to import not found or unreadable: live.
+Load paths:
+  /Users/takeshi/SITCON/SitconQuestionCorner/Prototype/SitconQueCorner/sass
+  /Applications/Fire.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/blueprint/stylesheets
+  /Applications/Fire.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets
+  /Applications/Fire.app/Contents/Resources/lib/ruby/compass_extensions/compass-960-plugin-0.10.4/stylesheets
+  /Applications/Fire.app/Contents/Resources/lib/ruby/compass_extensions/compass-h5bp-0.1.1/stylesheets
+  /Applications/Fire.app/Contents/Resources/lib/ruby/compass_extensions/compass-normalize-1.4.3/stylesheets
+  /Applications/Fire.app/Contents/Resources/lib/ruby/compass_extensions/bootstrap-sass-2.3.2.1/vendor/assets/stylesheets
+  /Applications/Fire.app/Contents/Resources/lib/ruby/compass_extensions/susy-1.0.9/sass
+  /Applications/Fire.app/Contents/Resources/lib/ruby/compass_extensions/zurb-foundation-4.3.1/scss
+  Compass::SpriteImporter
+  /vendor/assets/stylesheets)
+2015-02-28 17:38:24 overwrite stylesheets/style.css 
+2015-02-28 17:38:35 overwrite stylesheets/style.css 
+2015-02-28 17:39:24 overwrite stylesheets/style.css 
+2015-02-28 17:43:32 overwrite stylesheets/style.css 
+2015-02-28 17:44:31 overwrite stylesheets/style.css 
+2015-02-28 17:44:32 overwrite stylesheets/style.css 
+2015-02-28 17:44:41 overwrite stylesheets/style.css 
+2015-02-28 17:45:06 overwrite stylesheets/style.css 
+2015-02-28 18:10:46 overwrite stylesheets/style.css 
+2015-02-28 18:10:51 overwrite stylesheets/style.css 
+2015-02-28 18:11:00 overwrite stylesheets/style.css 
+2015-02-28 18:12:48 overwrite stylesheets/style.css 
+2015-02-28 18:12:54 overwrite stylesheets/style.css 
+2015-02-28 18:13:01 overwrite stylesheets/style.css 
+2015-02-28 18:13:06 overwrite stylesheets/style.css 
+2015-02-28 18:13:37 overwrite stylesheets/style.css 
+2015-02-28 18:14:08 overwrite stylesheets/style.css 
+2015-02-28 18:14:36 overwrite stylesheets/style.css 
+2015-02-28 18:14:57 overwrite stylesheets/style.css 
+2015-02-28 18:15:29 overwrite stylesheets/style.css 
+2015-02-28 18:15:44 overwrite stylesheets/style.css 
+2015-02-28 18:15:52 overwrite stylesheets/style.css 
+2015-02-28 18:18:46     error sass/style.scss (Line 57 of sass/_live.scss: Invalid CSS after ".": expected class name, was "")
+2015-02-28 18:18:46 overwrite stylesheets/style.css 
+2015-02-28 18:19:17 overwrite stylesheets/style.css 

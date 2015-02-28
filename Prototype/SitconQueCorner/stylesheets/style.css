@@ -456,31 +456,35 @@ footer {
   padding: 7px;
 }
 /* line 43, ../sass/_question.scss */
+.question-list .item .context pre {
+  font-size: 1.7em;
+}
+/* line 47, ../sass/_question.scss */
 .question-list .item .context p {
   margin: 5px 0;
 }
-/* line 48, ../sass/_question.scss */
+/* line 52, ../sass/_question.scss */
 .question-list .item .close {
   display: none;
 }
 
-/* line 56, ../sass/_question.scss */
+/* line 60, ../sass/_question.scss */
 .question-set {
   margin: 0 auto;
   width: 90%;
 }
 
-/* line 61, ../sass/_question.scss */
+/* line 65, ../sass/_question.scss */
 .order-set {
   padding: 10px 0;
 }
-/* line 62, ../sass/_question.scss */
+/* line 66, ../sass/_question.scss */
 .order-set a, .order-set p {
   font-size: 1.3em;
   display: inline-block;
 }
 
-/* line 71, ../sass/_question.scss */
+/* line 75, ../sass/_question.scss */
 .btn-want-this-question {
   display: block;
   background-color: #000;
@@ -495,39 +499,39 @@ footer {
   -webkit-transition: width .5s;
   transition: width .5s;
 }
-/* line 85, ../sass/_question.scss */
+/* line 89, ../sass/_question.scss */
 .btn-want-this-question:link {
   text-decoration: none;
 }
-/* line 89, ../sass/_question.scss */
+/* line 93, ../sass/_question.scss */
 .btn-want-this-question:hover {
   color: #555;
 }
 
-/* line 97, ../sass/_question.scss */
+/* line 101, ../sass/_question.scss */
 .wanted {
   background-color: #ba5347;
   width: 120px;
   -webkit-transition: width .5s;
   transition: width .5s;
 }
-/* line 101, ../sass/_question.scss */
+/* line 105, ../sass/_question.scss */
 .wanted:link {
   text-decoration: none;
 }
-/* line 105, ../sass/_question.scss */
+/* line 109, ../sass/_question.scss */
 .wanted:hover {
   color: #5E2923;
 }
 
 @media (max-width: 1050px) {
-  /* line 115, ../sass/_question.scss */
+  /* line 119, ../sass/_question.scss */
   .question-list {
     width: 70%;
   }
 }
 @media (max-width: 810px) {
-  /* line 123, ../sass/_question.scss */
+  /* line 127, ../sass/_question.scss */
   .question-list {
     width: 100%;
   }
@@ -651,4 +655,60 @@ footer {
 /* line 16, ../sass/_admin.scss */
 .admin-btn:hover {
   background-color: #5e2923;
+}
+
+/* line 1, ../sass/_live.scss */
+.live-view {
+  border-style: solid;
+  border-color: #ccc;
+  border-width: 1px;
+  padding: 10px;
+  color: #FFF;
+  display: inline-block;
+  width: 80%;
+  margin: 10px 0px;
+  vertical-align: top;
+}
+/* line 13, ../sass/_live.scss */
+.live-view h1 {
+  font-size: 1.4em;
+  margin: 10px 0;
+}
+/* line 18, ../sass/_live.scss */
+.live-view .item {
+  border-style: solid;
+  border-color: #ccc;
+  border-width: 1px;
+}
+/* line 23, ../sass/_live.scss */
+.live-view .item .title {
+  font-size: 2em;
+  background-color: #ba5347;
+  padding: 7px;
+}
+/* line 28, ../sass/_live.scss */
+.live-view .item .title .btn-collapse {
+  float: right;
+  color: #FFF;
+}
+/* line 31, ../sass/_live.scss */
+.live-view .item .title .btn-collapse:link {
+  text-decoration: none;
+}
+/* line 37, ../sass/_live.scss */
+.live-view .item .context {
+  padding: 7px;
+}
+/* line 40, ../sass/_live.scss */
+.live-view .item .context pre {
+  font-size: 2em;
+}
+/* line 44, ../sass/_live.scss */
+.live-view .item .context p {
+  font-size: 2em;
+  margin: 5px 0;
+}
+/* line 50, ../sass/_live.scss */
+.live-view .item .close {
+  display: none;
 }
