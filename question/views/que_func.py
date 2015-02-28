@@ -141,9 +141,9 @@ def edit(request):
 
     qid = request.POST['qid']
     title = request.POST['title']
-    context = request.POST['context']
+    text = request.POST['context']
 
-    if len(title) == 0 or len(context) == 0:
+    if len(title) == 0 or len(text) == 0:
         context['error'] = '標題或內容長度不得為零，請再試一次'
 
     try:
@@ -158,7 +158,7 @@ def edit(request):
 
         if 'error' not in context:
             question.title = title
-            question.text = context
+            question.text = text
             question.save()
             context['error'] = '問題儲存完成'
 
