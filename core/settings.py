@@ -49,6 +49,7 @@ INSTALLED_APPS = (
     'core',
     'users',
     'question',
+    'django_socketio',
 )
 
 MIDDLEWARE_CLASSES = (

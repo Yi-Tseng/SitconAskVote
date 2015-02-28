@@ -20,14 +20,13 @@
         <div class="item" id="que-{{que.id}}">
 
             <div class="title">
-                <b>({{que.want}}人想聽)</b>
+                <b>[{{que.want}}人想聽]</b>
                 {% autoescape on %}
                 {{que.title}}
                 {% endautoescape %}
                 {% if que.solved %}
                 [已回答]
                 {% endif %}
-                
                 <!-- 管理用 -->
                 {% if que.author.id == user.id %}
                 <a class="admin-btn" href="/question/edit?qid={{que.id}}">編輯</a>
@@ -66,9 +65,9 @@
                 </pre>
                 {% if user.is_authenticated %}
                     {% if que.id in want_list %}
-                        <a id="btn-que-{{que.id}}" href="#" class="btn-want-this-question wanted">不想聽</a>
+                    <a id="btn-que-{{que.id}}" href="#{{que.id}}" class="btn-want-this-question wanted">不想聽</a>
                     {% else %}
-                        <a id="btn-que-{{que.id}}" href="#" class="btn-want-this-question">想聽</a>
+                    <a id="btn-que-{{que.id}}" href="#que-{{que.id}}" class="btn-want-this-question">想聽</a>
                     {% endif %}
                 {% endif %}
 
