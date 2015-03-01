@@ -1,5 +1,6 @@
 // refresh want listen count
 
+/*
 setInterval(function() {
     $.get('/question/want', function(data) {
         console.log(data);
@@ -9,4 +10,4 @@ setInterval(function() {
     }, 'json')
 }, 1000);
 
-
+*/
