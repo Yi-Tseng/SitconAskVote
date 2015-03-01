@@ -6,12 +6,19 @@
 
             <div class="title">
                 標題
+                {{ question.title }}
             </div>
 
             <div class="context">
-                <p>提問者：</p>
+                <p>提問者：
+                    {% autoescape on %}
+                    {{question.author.last_name}}
+                    {% endautoescape %}
+                </p>
                 <pre>
-問題內容
+{% autoescape on %}
+{{question.text}}
+{% endautoescape %}
                 </pre>
             </div>
 
@@ -21,6 +28,7 @@
 {% endblock %}
 
 {% block js_block %}
+<script type="text/javascript">
 
-
+</script>
 {% endblock %}
