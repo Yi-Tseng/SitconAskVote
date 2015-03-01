@@ -21,16 +21,4 @@
 </div>
 {% endblock %}
 {% block js_block %}
-<script type="text/javascript">
-window.onbeforeunload = function(){
-    var title = $("input[name=title]")[0].value;
-    var text = $("textarea[name=context]")[0].value;
-
-    if(title !== '' || text !== '') {
-        if (!confirm('已經有輸入東西了\n要取消發問嗎？')) {
-            return '按一下「取消」停留在此頁';
-        }
-    }
-};
-</script>
 {% endblock %}

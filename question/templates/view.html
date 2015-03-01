@@ -31,20 +31,20 @@
                 {% if que.author.id == user.id %}
                 <a class="admin-btn" href="/question/edit?qid={{que.id}}">編輯</a>
                 <a class="admin-btn" href="/question/del?qid={{que.id}}">刪除</a>
-                    {% if user.is_staff %}
-                    {% if not que.solved %}
-                    <a class="admin-btn" href="/question/solve?qid={{que.id}}">已解決</a>
-                    {% else %}
-                    <a class="admin-btn" href="/question/unsolve?qid={{que.id}}">未解決</a>
-                    {% endif %}
-                    {% endif %}
+                {% if user.is_staff %}
+                {% if not que.solved %}
+                <a class="admin-btn" href="/question/solve?qid={{que.id}}">已解決</a>
+                {% else %}
+                <a class="admin-btn" href="/question/unsolve?qid={{que.id}}">未解決</a>
+                {% endif %}
+                {% endif %}
                 {% elif user.is_staff %}
                 <a class="admin-btn" href="/question/del?qid={{que.id}}">刪除</a>
-                    {% if not que.solved %}
-                    <a class="admin-btn" href="/question/solve?qid={{que.id}}">已解決</a>
-                    {% else %}
-                    <a class="admin-btn" href="/question/unsolve?qid={{que.id}}">未解決</a>
-                    {% endif %}
+                {% if not que.solved %}
+                <a class="admin-btn" href="/question/solve?qid={{que.id}}">已解決</a>
+                {% else %}
+                <a class="admin-btn" href="/question/unsolve?qid={{que.id}}">未解決</a>
+                {% endif %}
                 {% endif %}
                 <!-- 管理用 -->
 
@@ -64,11 +64,11 @@
                 {% endautoescape %}
                 </pre>
                 {% if user.is_authenticated %}
-                    {% if que.id in want_list %}
-                    <a id="btn-que-{{que.id}}" href="#{{que.id}}" class="btn-want-this-question wanted">不想聽</a>
-                    {% else %}
-                    <a id="btn-que-{{que.id}}" href="#que-{{que.id}}" class="btn-want-this-question">想聽</a>
-                    {% endif %}
+                {% if que.id in want_list %}
+                <a id="btn-que-{{que.id}}" href="#{{que.id}}" class="btn-want-this-question wanted">不想聽</a>
+                {% else %}
+                <a id="btn-que-{{que.id}}" href="#que-{{que.id}}" class="btn-want-this-question">想聽</a>
+                {% endif %}
                 {% endif %}
 
             </div>
@@ -78,8 +78,9 @@
     </div>
 
 </div>
+
+{% endblock %}
+
+{% block js_block %}
 <script src="{% static 'javascripts/que_view.js' %}"></script>
-{% if user.is_authenticated %}
-    <script src="{% static 'javascripts/user_want.js' %}"></script>
-{% endif %}
 {% endblock %}

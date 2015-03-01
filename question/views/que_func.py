@@ -7,6 +7,7 @@ from question.models import Question, WantListen
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 
+
 @login_required
 def ask(request):
     error = None
@@ -68,8 +69,8 @@ def view_question(request):
 
 
 def want_listen(request):
-    response_data = {}
 
+    response_data = {}
     if 'qid' not in request.GET:
         question_list = Question.objects.all()
 

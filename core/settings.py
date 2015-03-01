@@ -49,7 +49,6 @@ INSTALLED_APPS = (
     'core',
     'users',
     'question',
-    'django_socketio',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -125,4 +124,3 @@ EMAIL_HOST_PASSWORD = email_config['password']
 # Facebook
 FACEBOOK_APP_ID = fb_config['app_id']
 FACEBOOK_APP_SECRET = fb_config['secret']
-
