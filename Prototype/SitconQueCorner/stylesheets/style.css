@@ -3,19 +3,20 @@ html {
   background: none repeat scroll 0% 0% #151924;
   background-image: url("/images/bg-grid.png");
   background-image: url("/static/images/bg-grid.png");
+  font-family: "PT Sans Narrow","Source Han Sans TWHK",sans-serif;
 }
 
-/* line 9, ../sass/_main.scss */
+/* line 10, ../sass/_main.scss */
 body {
   color: #ba5347;
 }
 
-/* line 14, ../sass/_main.scss */
+/* line 15, ../sass/_main.scss */
 .container {
   padding: 0 40px;
 }
 
-/* line 18, ../sass/_main.scss */
+/* line 19, ../sass/_main.scss */
 .frame {
   margin: 30px auto;
   width: 50%;
@@ -24,28 +25,28 @@ body {
   min-height: 500px;
 }
 
-/* line 27, ../sass/_main.scss */
+/* line 28, ../sass/_main.scss */
 .form {
   padding: 50px 0;
   margin: auto 20px;
 }
 
-/* line 32, ../sass/_main.scss */
+/* line 33, ../sass/_main.scss */
 .field {
   margin: 15px 0;
 }
-/* line 35, ../sass/_main.scss */
+/* line 36, ../sass/_main.scss */
 .field p {
   font-size: 0.8em;
   padding: 10px 0px;
 }
-/* line 40, ../sass/_main.scss */
+/* line 41, ../sass/_main.scss */
 .field h2 {
   color: #FFF;
   font-size: 1.4em;
   display: inline;
 }
-/* line 46, ../sass/_main.scss */
+/* line 47, ../sass/_main.scss */
 .field input[type="text"], .field input[type="password"] {
   background-color: transparent;
   border-style: solid;
@@ -57,7 +58,7 @@ body {
   font-size: 1.4em;
   margin: 5px 0;
 }
-/* line 58, ../sass/_main.scss */
+/* line 59, ../sass/_main.scss */
 .field input[type="submit"] {
   width: 100%;
   border-width: 0;
@@ -69,15 +70,15 @@ body {
   font-size: 1.3em;
   text-align: center;
 }
-/* line 69, ../sass/_main.scss */
+/* line 70, ../sass/_main.scss */
 .field input[type="submit"]:link {
   text-decoration: none;
 }
-/* line 73, ../sass/_main.scss */
+/* line 74, ../sass/_main.scss */
 .field input[type="submit"]:hover {
   color: #5E2923;
 }
-/* line 78, ../sass/_main.scss */
+/* line 79, ../sass/_main.scss */
 .field textarea {
   width: 99%;
   background-color: #5E2923;
@@ -90,71 +91,71 @@ body {
   margin: 5px 0;
 }
 
-/* line 91, ../sass/_main.scss */
+/* line 92, ../sass/_main.scss */
 .error-msg {
   font-size: 1.3em;
   color: #FFF;
 }
 
-/* line 96, ../sass/_main.scss */
+/* line 97, ../sass/_main.scss */
 .white-text {
   color: #FFF;
 }
 
-/* line 100, ../sass/_main.scss */
+/* line 101, ../sass/_main.scss */
 .bright-text {
   color: #ba5347;
 }
 
-/* line 104, ../sass/_main.scss */
+/* line 105, ../sass/_main.scss */
 .dark-text {
   color: #5e2923;
 }
 
-/* line 108, ../sass/_main.scss */
+/* line 109, ../sass/_main.scss */
 .bright-link {
   color: #ba5347;
 }
-/* line 111, ../sass/_main.scss */
+/* line 112, ../sass/_main.scss */
 .bright-link:link {
   text-decoration: none;
 }
-/* line 115, ../sass/_main.scss */
+/* line 116, ../sass/_main.scss */
 .bright-link:hover {
   color: #5e2923;
 }
 
-/* line 120, ../sass/_main.scss */
+/* line 121, ../sass/_main.scss */
 .dark-link {
   color: #5e2923;
 }
-/* line 123, ../sass/_main.scss */
+/* line 124, ../sass/_main.scss */
 .dark-link:link {
   text-decoration: none;
 }
-/* line 127, ../sass/_main.scss */
+/* line 128, ../sass/_main.scss */
 .dark-link:hover {
   color: #ba5347;
 }
 
 @media (max-width: 810px) {
-  /* line 134, ../sass/_main.scss */
+  /* line 135, ../sass/_main.scss */
   .frame {
     width: 80%;
   }
 
-  /* line 138, ../sass/_main.scss */
+  /* line 139, ../sass/_main.scss */
   .container {
     padding: 0 20px;
   }
 }
 @media (max-width: 500px) {
-  /* line 144, ../sass/_main.scss */
+  /* line 145, ../sass/_main.scss */
   .frame {
     width: 100%;
   }
 
-  /* line 148, ../sass/_main.scss */
+  /* line 149, ../sass/_main.scss */
   .container {
     padding: 0 10px;
   }
@@ -554,7 +555,7 @@ footer {
 }
 /* line 15, ../sass/_about.scss */
 .about p {
-  font-size: 1.2em;
+  font-size: 1.4em;
   margin: 10px 0;
 }
 

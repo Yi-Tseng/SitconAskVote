@@ -239,3 +239,7 @@ Load paths:
 2015-03-01 15:52:29 overwrite stylesheets/style.css 
 2015-03-01 15:52:33 overwrite stylesheets/style.css 
 2015-03-01 15:53:27 overwrite stylesheets/style.css 
+2015-03-01 18:58:19     error sass/style.scss (Line 8 of sass/_main.scss: Invalid CSS after "...WHK",sans-serif": expected "{", was "}")
+2015-03-01 18:58:19 overwrite stylesheets/style.css 
+2015-03-01 18:58:35 overwrite stylesheets/style.css 
+2015-03-01 18:59:02 overwrite stylesheets/style.css 
