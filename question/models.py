@@ -9,6 +9,7 @@ class Question(models.Model):
     solved = models.BooleanField(default=False)
     author = models.ForeignKey(User)
     want = models.IntegerField(default=0)
+    live = models.BooleanField(default=False)
 
     class Meta:
         db_table = 'questions'
