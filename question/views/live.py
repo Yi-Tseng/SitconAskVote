@@ -39,7 +39,7 @@ def set_live(request):
         except:
             context['error'] = True
 
-    return HttpResponse(json.dumps(context), content_type="application/json")
+    return render(request, 'live.html', context)
 
 def live_view(request):
     context = {'question': None}
