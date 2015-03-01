@@ -363,20 +363,19 @@ footer {
 
 /* line 1, ../sass/_index.scss */
 .logo {
-  padding: 80px 0;
   margin: 0 auto;
   width: 50%;
 }
-/* line 5, ../sass/_index.scss */
+/* line 4, ../sass/_index.scss */
 .logo img {
   margin: 30px 0px;
   width: 100%;
 }
-/* line 9, ../sass/_index.scss */
+/* line 8, ../sass/_index.scss */
 .logo h1 {
-  margin: 30px 0px;
   font-size: 5em;
   text-align: center;
+  display: inline-block;
 }
 
 /* line 3, ../sass/_login.scss */
