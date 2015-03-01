@@ -698,17 +698,18 @@ footer {
 /* line 37, ../sass/_live.scss */
 .live-view .item .context {
   padding: 7px;
+  min-height: 400px;
 }
-/* line 40, ../sass/_live.scss */
+/* line 41, ../sass/_live.scss */
 .live-view .item .context pre {
   font-size: 2em;
 }
-/* line 44, ../sass/_live.scss */
+/* line 45, ../sass/_live.scss */
 .live-view .item .context p {
   font-size: 2em;
   margin: 5px 0;
 }
-/* line 50, ../sass/_live.scss */
+/* line 51, ../sass/_live.scss */
 .live-view .item .close {
   display: none;
 }
