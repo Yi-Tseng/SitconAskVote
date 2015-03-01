@@ -10,4 +10,7 @@ urlpatterns = patterns('',
     url(r'^solve$', views.solve),
     url(r'^unsolve$', views.unsolve),
     url(r'^live$', views.live_view),
+    url(r'^current_live$', views.get_current_live_question),
+    url(r'^set_live$', views.set_live),
+    
 )

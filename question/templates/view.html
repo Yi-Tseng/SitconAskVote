@@ -29,22 +29,38 @@
                 {% endif %}
                 <!-- 管理用 -->
                 {% if que.author.id == user.id %}
-                <a class="admin-btn" href="/question/edit?qid={{que.id}}">編輯</a>
-                <a class="admin-btn" href="/question/del?qid={{que.id}}">刪除</a>
-                {% if user.is_staff %}
-                {% if not que.solved %}
-                <a class="admin-btn" href="/question/solve?qid={{que.id}}">已解決</a>
-                {% else %}
-                <a class="admin-btn" href="/question/unsolve?qid={{que.id}}">未解決</a>
-                {% endif %}
-                {% endif %}
+                    <a class="admin-btn" href="/question/edit?qid={{que.id}}">編輯</a>
+                    <a class="admin-btn" href="/question/del?qid={{que.id}}">刪除</a>
+
+                    <!-- staff -->
+                    {% if user.is_staff %}
+
+                        <!-- staff - solve -->
+                        {% if not que.solved %}
+                            <a class="admin-btn" href="/question/solve?qid={{que.id}}">已解決</a>
+                        {% else %}
+                            <a class="admin-btn" href="/question/unsolve?qid={{que.id}}">未解決</a>
+                        {% endif %}
+
+                    {% endif %}
+
+
                 {% elif user.is_staff %}
-                <a class="admin-btn" href="/question/del?qid={{que.id}}">刪除</a>
-                {% if not que.solved %}
-                <a class="admin-btn" href="/question/solve?qid={{que.id}}">已解決</a>
-                {% else %}
-                <a class="admin-btn" href="/question/unsolve?qid={{que.id}}">未解決</a>
+                    <a class="admin-btn" href="/question/del?qid={{que.id}}">刪除</a>
+                        {% if not que.solved %}
+                            <a class="admin-btn" href="/question/solve?qid={{que.id}}">已解決</a>
+                        {% else %}
+                            <a class="admin-btn" href="/question/unsolve?qid={{que.id}}">未解決</a>
+                    {% endif %}
                 {% endif %}
+
+                <!-- staff - live -->
+                {% if user.is_staff %}
+                    {% if que.live %}
+                        <a class="admin-btn" href="#">[問答中]</a>
+                    {% else %}
+                        <a class="admin-btn" href="/question/set_live?qid={{que.id}}">[開始提問]</a>
+                    {% endif %}
                 {% endif %}
                 <!-- 管理用 -->
 
