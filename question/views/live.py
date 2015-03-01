@@ -2,6 +2,7 @@ import json
 from django.shortcuts import render, redirect
 from question.models import Question, WantListen
 from django.http import HttpResponse
+from django.forms.models import model_to_dict
 
 def get_current_live_question(request):
     live_question = None
@@ -12,7 +13,7 @@ def get_current_live_question(request):
     except Question.DoesNotExist:
         pass
 
-    context = {'question': live_question}
+    context = {'question': {'author': live_question.author.last_name, 'text': live_question.text, 'title': live_question.title}}
     return HttpResponse(json.dumps(context), content_type="application/json")
 
 def set_live(request):
@@ -23,23 +24,22 @@ def set_live(request):
         qid = request.GET['qid']
 
         try:
-            questions = Question.objects.all()
+            live_question = Question.objects.get(live=True)
+            live_question.live = False
+            live_question.save()
 
-            for question in questions:
+        except Question.DoesNotExist:
+            pass
 
-                if question.live and question.id != qid:
-                    question.live = False
-                    question.save()
+        try:
+            live_question = Question.objects.get(id=qid)
+            live_question.live = True
+            live_question.save()
 
-                if question.id == qid:
-                    question.live = True
-                    question.save()
-                    context['question'] = question
+        except Question.DoesNotExist:
+            pass
 
-        except:
-            context['error'] = True
-
-    return render(request, 'live.html', context)
+    return redirect('/question/view')
 
 def live_view(request):
     context = {'question': None}

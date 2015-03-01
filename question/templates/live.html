@@ -5,7 +5,6 @@
         <div class="item" id="pop-01">
 
             <div class="title">
-                標題
                 {{ question.title }}
             </div>
 
@@ -16,9 +15,7 @@
                     {% endautoescape %}
                 </p>
                 <pre>
-{% autoescape on %}
-{{question.text}}
-{% endautoescape %}
+{% autoescape on %}{{question.text}}{% endautoescape %}
                 </pre>
             </div>
 
@@ -28,7 +25,5 @@
 {% endblock %}
 
 {% block js_block %}
-<script type="text/javascript">
-
-</script>
+<script type="text/javascript" src="/static/javascripts/live.js"></script>
 {% endblock %}
