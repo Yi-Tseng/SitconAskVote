@@ -6,14 +6,16 @@ from django.forms.models import model_to_dict
 
 def get_current_live_question(request):
     live_question = None
+    context = {'question': None}
 
     try:
         live_question = Question.objects.get(live=True)
 
+        context = {'question': {'author': live_question.author.last_name, 'text': live_question.text, 'title': live_question.title}}
+
     except Question.DoesNotExist:
         pass
 
-    context = {'question': {'author': live_question.author.last_name, 'text': live_question.text, 'title': live_question.title}}
     return HttpResponse(json.dumps(context), content_type="application/json")
 
 def set_live(request):
@@ -24,9 +26,11 @@ def set_live(request):
         qid = request.GET['qid']
 
         try:
-            live_question = Question.objects.get(live=True)
-            live_question.live = False
-            live_question.save()
+            live_questions = Question.objects.filter(live=True)
+
+            for live_question in live_questions:
+                live_question.live = False
+                live_question.save()
 
         except Question.DoesNotExist:
             pass
