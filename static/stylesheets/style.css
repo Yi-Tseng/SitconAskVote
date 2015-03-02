@@ -458,33 +458,38 @@ footer {
 /* line 43, ../sass/_question.scss */
 .question-list .item .context pre {
   font-size: 1.7em;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
 }
-/* line 47, ../sass/_question.scss */
+/* line 52, ../sass/_question.scss */
 .question-list .item .context p {
   margin: 5px 0;
 }
-/* line 52, ../sass/_question.scss */
+/* line 57, ../sass/_question.scss */
 .question-list .item .close {
   display: none;
 }
 
-/* line 60, ../sass/_question.scss */
+/* line 65, ../sass/_question.scss */
 .question-set {
   margin: 0 auto;
   width: 90%;
 }
 
-/* line 65, ../sass/_question.scss */
+/* line 70, ../sass/_question.scss */
 .order-set {
   padding: 10px 0;
 }
-/* line 66, ../sass/_question.scss */
+/* line 71, ../sass/_question.scss */
 .order-set a, .order-set p {
   font-size: 1.3em;
   display: inline-block;
 }
 
-/* line 75, ../sass/_question.scss */
+/* line 80, ../sass/_question.scss */
 .btn-want-this-question {
   display: block;
   background-color: #000;
@@ -499,39 +504,39 @@ footer {
   -webkit-transition: width .5s;
   transition: width .5s;
 }
-/* line 89, ../sass/_question.scss */
+/* line 94, ../sass/_question.scss */
 .btn-want-this-question:link {
   text-decoration: none;
 }
-/* line 93, ../sass/_question.scss */
+/* line 98, ../sass/_question.scss */
 .btn-want-this-question:hover {
   color: #555;
 }
 
-/* line 101, ../sass/_question.scss */
+/* line 106, ../sass/_question.scss */
 .wanted {
   background-color: #ba5347;
   width: 120px;
   -webkit-transition: width .5s;
   transition: width .5s;
 }
-/* line 105, ../sass/_question.scss */
+/* line 110, ../sass/_question.scss */
 .wanted:link {
   text-decoration: none;
 }
-/* line 109, ../sass/_question.scss */
+/* line 114, ../sass/_question.scss */
 .wanted:hover {
   color: #5E2923;
 }
 
 @media (max-width: 1050px) {
-  /* line 119, ../sass/_question.scss */
+  /* line 124, ../sass/_question.scss */
   .question-list {
     width: 70%;
   }
 }
 @media (max-width: 810px) {
-  /* line 127, ../sass/_question.scss */
+  /* line 132, ../sass/_question.scss */
   .question-list {
     width: 100%;
   }
@@ -703,13 +708,18 @@ footer {
 /* line 41, ../sass/_live.scss */
 .live-view .item .context pre {
   font-size: 2em;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
 }
-/* line 45, ../sass/_live.scss */
+/* line 50, ../sass/_live.scss */
 .live-view .item .context p {
   font-size: 2em;
   margin: 5px 0;
 }
-/* line 51, ../sass/_live.scss */
+/* line 56, ../sass/_live.scss */
 .live-view .item .close {
   display: none;
 }
