@@ -9,7 +9,7 @@
     width: 80%;
     margin: 10px 0px;
     vertical-align: top;
-    
+
     h1 {
         font-size: 1.4em;
         margin: 10px 0;
@@ -37,11 +37,16 @@
         .context {
             padding: 7px;
             min-height: 400px;
-            
+
             pre {
                 font-size: 2em;
+                white-space:pre-wrap;
+                white-space:-moz-pre-wrap;
+                white-space:-pre-wrap;
+                white-space:-o-pre-wrap;
+                word-wrap:break-word;                
             }
-            
+
             p {
                 font-size: 2em;
                 margin: 5px 0;
