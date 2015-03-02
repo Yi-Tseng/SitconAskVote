@@ -14,9 +14,9 @@
                     {{question.author.last_name}}
                     {% endautoescape %}
                 </p>
-                <pre>
-{{question.text}}
-                </pre>
+                <p class="text">
+{{question.text|linebreaksbr}}
+                </p>
             </div>
 
         </div>

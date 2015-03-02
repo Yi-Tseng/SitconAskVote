@@ -8,9 +8,9 @@ setInterval(function() {
             var author = data.question.author;
             var text = data.question.text;
 
-            $(".title").html(title);
-            $(".context p").html("提問者：" + author);
-            $(".context pre").html(text);
+            $(".title").html(escape(title));
+            $(".context p").html("提問者：" + escape(author));
+            $(".context pre").html(escape(text));
         }
     });
 }, 1000);

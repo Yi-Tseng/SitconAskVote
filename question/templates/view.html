@@ -74,11 +74,9 @@
                     {{que.author.last_name}}
                     {% endautoescape %}
                 </p>
-                <pre>
-                {% autoescape on %}
-{{que.text}}
-                {% endautoescape %}
-                </pre>
+                <p class="text">
+{{que.text|linebreaksbr}}
+                </p>
                 {% if user.is_authenticated %}
                 {% if que.id in want_list %}
                 <a id="btn-que-{{que.id}}" href="#{{que.id}}" class="btn-want-this-question wanted">不想聽</a>
