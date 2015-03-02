@@ -11,3 +11,7 @@ setInterval(function() {
 }, 1000);
 
 */
+
+function chk_del() {
+    return confirm("確認刪除？");
+}

@@ -30,7 +30,7 @@
                 <!-- 管理用 -->
                 {% if que.author.id == user.id %}
                     <a class="admin-btn" href="/question/edit?qid={{que.id}}">編輯</a>
-                    <a class="admin-btn" href="/question/del?qid={{que.id}}">刪除</a>
+                    <a class="admin-btn" href="/question/del?qid={{que.id}}" onclick="return chk_del()">刪除</a>
 
                     <!-- staff -->
                     {% if user.is_staff %}
